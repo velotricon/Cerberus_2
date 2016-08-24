@@ -51,8 +51,9 @@ build/
 [Oo]bj/
 
 #modules
-node_modules/*
-libs/*
+[Nn]ode_modules/
+[Ll]ibs/
+[Tt]ypings/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
