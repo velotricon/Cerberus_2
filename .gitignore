@@ -50,10 +50,11 @@ build/
 [Bb]in/
 [Oo]bj/
 
-#modules
+#myCustomIgnores
 [Nn]ode_modules/
 [Ll]ibs/
 [Tt]ypings/
+[Aa]pp[Ss]cripts/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

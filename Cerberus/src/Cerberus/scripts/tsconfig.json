@@ -8,7 +8,7 @@
     "outDir": "../wwwroot/appScripts/",
     "removeComments": false,
     "sourceMap": true,
-    "target": "es5",
+    "target": "es6",
     "moduleResolution": "node"
   },
   "exclude": [
