@@ -51,10 +51,8 @@ build/
 [Oo]bj/
 
 #modules
-*node_modules*
-src/Cerberus/bin/
-src/Cerberus/obj/
-src/Cerberus/node_modules/
+node_modules/*
+libs/*
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
