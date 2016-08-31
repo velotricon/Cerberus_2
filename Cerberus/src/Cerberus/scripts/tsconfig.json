@@ -9,8 +9,10 @@
     "removeComments": false,
     "sourceMap": true,
     "target": "es6",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "watch": true
   },
+  "compileOnSave": true,
   "exclude": [
     "node_modules",
     "typings/index",
