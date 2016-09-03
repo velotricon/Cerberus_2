@@ -1,6 +1,5 @@
 ﻿import { Component }            from '@angular/core';
-import { MenuItemComponent }    from './menu-item.component';
-import { MenuItem }             from './menu-item';
+import { MenuService }          from './menu.service';
 
 @Component({
     selector: 'cerberus-app',
@@ -21,11 +20,6 @@ import { MenuItem }             from './menu-item';
 `})
 
 export class AppComponent {
-    MenuItemsTable: MenuItem[] = [
-        { label: 'link 1', href: '/test1' },
-        { label: 'link 2', href: '/test2' },
-        { label: 'link 3', href: '/test3' }
-    ]; 
 
     App: TestObj = {
         TmpVal: 'Insert your text'
