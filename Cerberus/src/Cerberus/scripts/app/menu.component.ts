@@ -1,5 +1,7 @@
-﻿import { Component, Input }         from '@angular/core';
-import { MenuItem }                 from './menu-item';
+﻿import { Component, Input, OnInit }         from '@angular/core';
+import { MenuItem }                         from './menu-item';
+import { MenuService }                      from './menu.service';
+
 
 @Component({
     selector: 'menu',
@@ -10,7 +12,18 @@ import { MenuItem }                 from './menu-item';
 `
 })
 
-export class MenuComponent {
-    @Input()
+export class MenuComponent implements OnInit {
     MenuItems: MenuItem[];
+
+    LoadMenuItems(): void {
+        this.MenuItems = this.service.GetMenuItems();
+    }
+
+    ngOnInit(): void {
+        this.LoadMenuItems();
+    }
+
+    constructor(private service: MenuService) {
+
+    }
 }

@@ -3,10 +3,12 @@ import { BrowserModule }            from '@angular/platform-browser';
 import { FormsModule }              from '@angular/forms';
 import { AppComponent }             from './app.component';
 import { MenuComponent }            from './menu.component';
+import { MenuService }              from './menu.service';
 
 @NgModule({
     imports: [BrowserModule, FormsModule],
     declarations: [AppComponent, MenuComponent],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [MenuService]
 })
 export class AppModule { }

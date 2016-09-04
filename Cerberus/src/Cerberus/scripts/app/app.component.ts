@@ -1,10 +1,9 @@
 ﻿import { Component }            from '@angular/core';
-import { MenuService }          from './menu.service';
 
 @Component({
     selector: 'cerberus-app',
     template: `
-<menu [MenuItems]="MenuItemsTable"></menu>
+<menu></menu>
 
 <br />
 <br />
