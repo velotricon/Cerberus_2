@@ -1,0 +1,6 @@
+﻿body {
+}
+
+table.light-grid tr.clickable {
+    cursor: pointer;
+}

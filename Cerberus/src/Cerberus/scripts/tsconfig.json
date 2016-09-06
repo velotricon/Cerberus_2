@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -7,12 +8,14 @@
     "noImplicitAny": false,
     "outDir": "../wwwroot/appScripts/",
     "removeComments": false,
-    "sourceMap": true,
+    //"sourceMap": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    //"sourceRoot": "../scripts/app/",
     "target": "es6",
     "moduleResolution": "node",
-    "watch": true
+    "watch": false
   },
-  "compileOnSave": true,
   "exclude": [
     "node_modules",
     "typings/index",

@@ -1,0 +1,16 @@
+﻿<div class="person-list">
+    <table class="light-grid">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of ModelPersonList" (click)="PersonSelected(person)" class="clickable">
+                <td>{{person.Name}}</td>
+                <td>{{person.Surname}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

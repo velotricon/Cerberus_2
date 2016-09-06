@@ -1,4 +1,4 @@
 ﻿export class MenuItem {
-    label: string;
-    href: string;
+    Label: string;
+    Href: string;
 }

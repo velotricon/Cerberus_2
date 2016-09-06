@@ -1,0 +1,16 @@
+﻿<div class="person-view">
+    <div *ngIf="ModelPerson" class="column">
+        <div class="row">
+            <label>Name:</label>
+            <span>{{ModelPerson.Name}}</span>
+        </div>
+        <div class="row">
+            <label>Surname:</label>
+            <span>{{ModelPerson.Surname}}</span>
+        </div>
+        
+    </div>
+    <div class="row">
+        <back-button></back-button>
+    </div>
+</div>

@@ -4,7 +4,8 @@ import { MENU_ITEMS }       from './menu.mock';
 
 @Injectable()
 export class MenuService {
-    GetMenuItems(): MenuItem[] {
-        return MENU_ITEMS;
+    GetMenuItems(): Promise<MenuItem[]> {
+        let menu_items = MENU_ITEMS;
+        return Promise.resolve(menu_items);
     }
 }
