@@ -3,6 +3,8 @@ import { BrowserModule }            from '@angular/platform-browser';
 import { FormsModule }              from '@angular/forms';
 import { ModuleWithProviders }      from '@angular/core';
 import { Routes, RouterModule }     from '@angular/router';
+import { HttpModule, JsonpModule }  from '@angular/http';
+
 import { Routing }                  from './app.routing';
 
 //Components:
@@ -19,9 +21,14 @@ import { MenuService }              from './menu.service';
 import { PersonService }            from './person.service';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, Routing],
-
-    declarations: [AppComponent,
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        Routing
+    ],
+    declarations: [
+        AppComponent,
         HomeComponent,
         MenuComponent,
         TestComponent,
@@ -29,9 +36,7 @@ import { PersonService }            from './person.service';
         PersonListComponent,
         BackButtonComponent
     ],
-
     bootstrap: [AppComponent],
-
     providers: [MenuService, PersonService]
 })
 export class AppModule { }

@@ -12,6 +12,7 @@ export class PersonListComponent implements OnInit {
     }
 
     ModelPersonList: Person[];
+    ErrorMessage: string;
 
     PersonSelected(SelectedPerson: Person): void {
         let link = ['/person/', SelectedPerson.Id];
@@ -19,6 +20,9 @@ export class PersonListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.service.GetPersonArray().then(x => this.ModelPersonList = x);
+        this.service.GetPersonArray().subscribe(
+            result => this.ModelPersonList = result,
+            error => this.ErrorMessage = <any>error
+        );
     }
 }
