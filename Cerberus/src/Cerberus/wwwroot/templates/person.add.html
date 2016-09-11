@@ -1,0 +1,18 @@
+﻿<div class="person-add">
+    <div class="column">
+        <div class="row">
+            <label>Name</label>
+            <input [(ngModel)]="Model.NAME" placeholder="NAME"/>
+        </div>
+        <div class="row">
+            <label>Surname</label>
+            <input [(ngModel)]="Model.SURNAME" placeholder="SURNAME"/>
+        </div>
+        <div class="row">
+            <button (click)="AddNewPerson()">Add new person</button>
+        </div>
+        <div class="row">
+            <back-button></back-button>
+        </div>
+    </div>
+</div>

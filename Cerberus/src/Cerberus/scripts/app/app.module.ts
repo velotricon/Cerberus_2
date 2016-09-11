@@ -15,6 +15,7 @@ import { TestComponent }            from './test.component';
 import { PersonViewComponent }      from './person.view.component';
 import { PersonListComponent }      from './person.list.component';
 import { BackButtonComponent }      from './back.button.component';
+import { PersonAddComponent }       from './person.add.component';
 
 //Services:
 import { MenuService }              from './menu.service';
@@ -34,7 +35,8 @@ import { PersonService }            from './person.service';
         TestComponent,
         PersonViewComponent,
         PersonListComponent,
-        BackButtonComponent
+        BackButtonComponent,
+        PersonAddComponent
     ],
     bootstrap: [AppComponent],
     providers: [MenuService, PersonService]

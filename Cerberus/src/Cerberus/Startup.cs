@@ -21,6 +21,7 @@ namespace Cerberus
         {
             string root_path = services.BuildServiceProvider().GetRequiredService<IHostingEnvironment>().ContentRootPath;
             services.AddMvc().AddJsonOptions(o => o.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
             string connection = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=" + root_path + @"\AppData\MainDatabase.mdf;Trusted_Connection=True;";
             services.AddDbContext<MainContext>(options => options.UseSqlServer(connection));
         }

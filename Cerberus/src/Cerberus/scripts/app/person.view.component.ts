@@ -8,8 +8,7 @@ import { PersonService }            from './person.service';
     templateUrl: './templates/person.view.html'
 })
 export class PersonViewComponent implements OnInit {
-    constructor(private service: PersonService, private route: ActivatedRoute) {
-    }
+    constructor(private service: PersonService, private route: ActivatedRoute) { }
 
     PersonId: number;
     ModelPerson: Person;

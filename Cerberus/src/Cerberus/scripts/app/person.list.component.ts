@@ -8,8 +8,7 @@ import { PersonService }            from './person.service';
     templateUrl: './templates/person.list.html'
 })
 export class PersonListComponent implements OnInit {
-    constructor(private service: PersonService, private router: Router) {
-    }
+    constructor(private service: PersonService, private router: Router) { }
 
     ModelPersonList: Person[];
     ErrorMessage: string;

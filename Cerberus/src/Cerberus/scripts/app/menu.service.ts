@@ -1,5 +1,4 @@
 ﻿import { Injectable }       from '@angular/core';
-import { MenuItem }         from './menu-item';
 import { MENU_ITEMS }       from './menu.mock';
 
 @Injectable()
@@ -8,4 +7,9 @@ export class MenuService {
         let menu_items = MENU_ITEMS;
         return Promise.resolve(menu_items);
     }
+}
+
+export class MenuItem {
+    Label: string;
+    Href: string;
 }

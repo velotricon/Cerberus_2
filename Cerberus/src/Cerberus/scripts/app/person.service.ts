@@ -1,8 +1,8 @@
-﻿import { Injectable }       from '@angular/core';
-import { Response, Http }   from '@angular/http';
-import { Person }           from './person';
-import { PERSON_ARRAY }     from './person.mock';
-import { Observable }       from 'rxjs/Observable';
+﻿import { Injectable }                                   from '@angular/core';
+import { Response, Http, Headers, RequestOptions }      from '@angular/http';
+import { Person }                                       from './person';
+import { PERSON_ARRAY }                                 from './person.mock';
+import { Observable }                                   from 'rxjs/Observable';
 
 @Injectable()
 export class PersonService {
@@ -14,13 +14,30 @@ export class PersonService {
     }
 
     GetPersonArray(): Observable<Person[]> {
-        return this.http.get('api/person').map(this.map_person_array);
+        return this.http.get('api/person').map(this.map_person_array).catch(this.handle_error);
+    }
+
+    AddPerson(PersonObj): Observable<number> {
+        let body = JSON.stringify(PersonObj);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post('api/person', body, options).map(this.map_person_id).catch(this.handle_error);
+    }
+
+    private handle_error(error: any) {
+        //Tutaj da się ze zmiennej error wyciągnąć jakieś ciekawsze informacje dot. wyjątku rzuconego z serwera.
+        //Jak kiedyś zorientuję się jak w angularze2 pokazywać w fajny sposób błędy i jak je gdzieś logować
+        //na serwerze albo jak je wysyłać mailem to się do tego wróci.
+        return Observable.throw(error.status + ': ' + error.statusText);
     }
 
     private map_person_array(res: Response) {
         let body = res.json();
-        let tmp1: Person = body[0];
-        let tmp2: Person = body[1];
-        return body || {};
+        return body;
+    }
+
+    private map_person_id(res: Response) {
+        let id: number = res.json();
+        return id;
     }
 }

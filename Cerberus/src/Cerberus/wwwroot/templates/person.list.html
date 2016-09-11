@@ -8,12 +8,13 @@
         </thead>
         <tbody>
             <tr *ngFor="let person of ModelPersonList" (click)="PersonSelected(person)" class="clickable">
-                <td>{{person.Name}}</td>
-                <td>{{person.Surname}}</td>
+                <td>{{person.NAME}}</td>
+                <td>{{person.SURNAME}}</td>
             </tr>
         </tbody>
     </table>
     <div class="row">
         <back-button></back-button>
     </div>
+    <h1>{{ErrorMessage}}</h1>
 </div>

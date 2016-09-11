@@ -5,22 +5,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Cerberus.Models;
 using Newtonsoft.Json;
+using Cerberus.Managers;
+using Cerberus.AbstractClasses;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Cerberus.Controllers
 {
     [Route("api/[controller]")]
-    public class PersonController : Controller
+    public class PersonController : AbstractController
     {
+        //Skoro MainContext jest wstrzykiwany do kontrolera to może jakoś dało by się zrobić tak,
+        //żeby wstrzykiwany był też odpowiedni manager (w tym przypadku PersonManager)?
+
+        public PersonController(MainContext Context) : base(Context)
+        {
+        }
+
         // GET: api/values
         [HttpGet]
-        public IEnumerable<PersonViewModel> Get()
+        public IEnumerable<PERSON> Get()
         {
-            List<PersonViewModel> person_list = new List<PersonViewModel>();
-            person_list.Add(new PersonViewModel() { Id = 1, Name = "Jan", Surname = "Kowalski" });
-            person_list.Add(new PersonViewModel() { Id = 2, Name = "Janusz", Surname = "Tracz" });
-            string tmp = JsonConvert.SerializeObject(person_list);
+            PersonManager manager = new PersonManager(this.context);
+            List<PERSON> person_list = manager.GetActivePersons();
             return person_list;
         }
 
@@ -33,8 +40,11 @@ namespace Cerberus.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public int Post([FromBody]PERSON value)
         {
+            PersonManager manager = new PersonManager(this.context);
+            manager.AddPerson(value);
+            return value.ID;
         }
 
         // PUT api/values/5
@@ -48,5 +58,7 @@ namespace Cerberus.Controllers
         public void Delete(int id)
         {
         }
+
+        
     }
 }
