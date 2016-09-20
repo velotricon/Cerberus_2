@@ -20,6 +20,7 @@ import { PersonAddComponent }       from './person.add.component';
 //Services:
 import { MenuService }              from './menu.service';
 import { PersonService }            from './person.service';
+import { LoggerService }               from './logger.service';
 
 @NgModule({
     imports: [
@@ -39,6 +40,10 @@ import { PersonService }            from './person.service';
         PersonAddComponent
     ],
     bootstrap: [AppComponent],
-    providers: [MenuService, PersonService]
+    providers: [
+        MenuService,
+        PersonService,
+        LoggerService
+    ]
 })
 export class AppModule { }

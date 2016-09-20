@@ -13,7 +13,8 @@ Jaka jest specyfika pracy firmy head-hunterskiej?
 1) Kalendarz
 	Kalendarz to bardzo ważna część projektu. Nie wydaje mi się, żebyśmy mogli sobie pozwolić wykorzystywanie jakiegoś kendo, czy innego tego typu badziewia. Tutaj musimy mieć naprawdę pełne pole do manewru. 
 	W kalendarzu head-hunterzy będą sobie zapisywać:
-	-	Terminy spotkań
+	-	Terminy spotkań. Termin spotkania razem z czasem dojazdu i powrotu lub dojazdu do innego punktu.
+	
 	
 2) Baza potencjalnych pracowników
 	To jest kolejny kluczowy element tego projektu. Baza potencjalnych pracowników musi dawać użytkownikowi możliwość definiowania jakiś unikalnych cech (może tak jak słowa kluczowe) i przypisywania ich potencjalnym. Oczywiście będą tam też standardowe cechy takie jak: 

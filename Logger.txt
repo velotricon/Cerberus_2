@@ -1,0 +1,12 @@
+Logger
+
+1) Loger ma logować dane do konsoli.
+2) Różne typy logów:
+	- Log
+	- Info
+	- Debug
+	- Error
+3) Logi powinny być gdzieś odkładane, tak, żeby można je było później odczytać albo skompletować i wyłać mailem.
+4) Każdy log powinien mieć dokładną godzinę utworzenia.
+5) Może by tak podawać jeszcze jakieś dodatkowe dane w logach? Tylko jakie?
+	
