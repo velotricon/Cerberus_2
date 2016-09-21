@@ -3,13 +3,16 @@ import { Router }                   from '@angular/router';
 import { Person }                   from './person';
 import { PersonService }            from './person.service';
 import { LoggerService }            from './logger.service';
+import { AbstractComponent }        from './abstractions/abstract.component';
 
 @Component({
     selector: 'person-list',
     templateUrl: './templates/person.list.html'
 })
-export class PersonListComponent implements OnInit {
-    constructor(private service: PersonService, private router: Router, private logger: LoggerService) { }
+export class PersonListComponent extends AbstractComponent implements OnInit {
+    constructor(private service: PersonService, private router: Router, Logger: LoggerService) {
+        super('PersonListComponent', Logger);
+    }
 
     ModelPersonList: Person[];
     ErrorMessage: string;
@@ -20,24 +23,24 @@ export class PersonListComponent implements OnInit {
     }
 
     private model_success(RequestResutlt: Person[]) {
-        this.logger.Debug('PersonListComponent.model_success', 'begin');
-        this.logger.Debug('PersonListComponent.model_success', 'count: ' + RequestResutlt.length);
+        //this.logger.Debug('PersonListComponent.model_success', 'begin');
+        //this.logger.Debug('PersonListComponent.model_success', 'count: ' + RequestResutlt.length);
         this.ModelPersonList = RequestResutlt;
-        this.logger.Debug('PersonListComponent.model_success', 'end');
+        //this.logger.Debug('PersonListComponent.model_success', 'end');
     }
 
     private model_error(Error: any) {
-        this.logger.Debug('PersonListComponent.model_error', 'begin');
+        //this.logger.Debug('PersonListComponent.model_error', 'begin');
         this.ErrorMessage = Error;
-        this.logger.Debug('PersonListComponent.model_error', 'end');
+        //this.logger.Debug('PersonListComponent.model_error', 'end');
     }
 
     ngOnInit(): void {
-        this.logger.Debug('PersonListComponent.ngOnInit', 'begin');
+        //this.logger.Debug('PersonListComponent.ngOnInit', 'begin');
         this.service.GetPersonArray().subscribe(
             result => this.model_success(result),
             error => this.model_error(error)
         );
-        this.logger.Debug('PersonListComponent.ngOnInit', 'end');
+        //this.logger.Debug('PersonListComponent.ngOnInit', 'end');
     }
 }
