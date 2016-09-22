@@ -1,12 +1,21 @@
 Logger
 
 1) Loger ma logować dane do konsoli.
+	<<< zrobione
+	
 2) Różne typy logów:
 	- Log
 	- Info
 	- Debug
 	- Error
+	<<< zrobione
+	
 3) Logi powinny być gdzieś odkładane, tak, żeby można je było później odczytać albo skompletować i wyłać mailem.
+	<<< zrobione
+	
 4) Każdy log powinien mieć dokładną godzinę utworzenia.
+	<<< zrobine
+	
 5) Może by tak podawać jeszcze jakieś dodatkowe dane w logach? Tylko jakie?
+	- Nazwa komponentu, który dodał loga <<< zrobione
 	

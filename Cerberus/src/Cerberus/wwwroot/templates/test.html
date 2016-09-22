@@ -1,1 +1,4 @@
-﻿test stuff here
+﻿<div class="test-component">
+    <input #box (keyup)="OnKeyUp($event)"/>
+    <p>{{box.value}}</p>
+</div>

@@ -5,5 +5,7 @@
     templateUrl: './templates/test.html'
 })
 export class TestComponent {
-
+    OnKeyUp(evt: any) {
+        console.log(evt);
+    }
 }
