@@ -24,6 +24,8 @@ namespace Cerberus
 
             string connection = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=" + root_path + @"\AppData\MainDatabase.mdf;Trusted_Connection=True;";
             services.AddDbContext<MainContext>(options => options.UseSqlServer(connection));
+
+            //services.AddIdentity
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

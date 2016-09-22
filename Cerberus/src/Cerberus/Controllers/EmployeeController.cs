@@ -34,8 +34,11 @@ namespace Cerberus.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]EMPLOYEE value)
+        public int Post([FromBody]EMPLOYEE value)
         {
+            EmployeeManager manager = new EmployeeManager(this.context);
+            manager.AddEmployee(value);
+            return value.ID;
         }
 
         // PUT api/values/5
