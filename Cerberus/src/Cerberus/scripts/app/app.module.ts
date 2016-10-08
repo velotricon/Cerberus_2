@@ -22,7 +22,8 @@ import { LoginComponent }           from './login.component';
 //Services:
 import { MenuService }              from './menu.service';
 import { PersonService }            from './person.service';
-import { LoggerService }               from './logger.service';
+import { LoggerService }            from './logger.service';
+import { IdentityService }          from './identity.service';
 
 @NgModule({
     imports: [
@@ -47,7 +48,8 @@ import { LoggerService }               from './logger.service';
     providers: [
         MenuService,
         PersonService,
-        LoggerService
+        LoggerService,
+        IdentityService
     ]
 })
 export class AppModule { }

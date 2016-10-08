@@ -8,8 +8,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
-using Cerberus.Models;
 using Microsoft.EntityFrameworkCore;
+using Cerberus.Interfaces;
+using Cerberus.Interfaces.ManagerInterfaces;
+using Cerberus.Models;
+using Cerberus.Managers;
+using Cerberus.Services;
 
 namespace Cerberus
 {
@@ -24,6 +28,14 @@ namespace Cerberus
 
             string connection = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=" + root_path + @"\AppData\MainDatabase.mdf;Trusted_Connection=True;";
             services.AddDbContext<MainContext>(options => options.UseSqlServer(connection));
+
+            //Managers:
+            services.AddScoped<IAddressManager, AddressManager>();
+            services.AddScoped<IAuthManager, AuthManager>();
+            services.AddScoped<IBankAccountManager, BankAccountManager>();
+            services.AddScoped<IEmployeeManager, EmployeeManager>();
+            services.AddScoped<IPersonManager, PersonManager>();
+            services.AddScoped<IRoleManager, RoleManager>();
 
             //services.AddIdentity
         }
@@ -49,6 +61,8 @@ namespace Cerberus
             //{
             //    await context.Response.WriteAsync("Hello World!");
             //});
+
+            DbInitializer.Initialize(app.ApplicationServices);
         }
     }
 }

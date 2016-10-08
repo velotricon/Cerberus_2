@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cerberus.Models;
+using Cerberus.Interfaces.ManagerInterfaces;
 
 namespace Cerberus.Managers
 {
-    public class PersonManager : AbstractManager
+    public class PersonManager : AbstractManager, IPersonManager
     {
+        public PersonManager(MainContext Context) : base(Context) { }
+
         public void AddPerson(PERSON NewPerson)
         {
             if (string.IsNullOrEmpty(NewPerson.NAME)) throw new Exception("Person name can not be null!");
@@ -42,7 +45,5 @@ namespace Cerberus.Managers
             person.IS_ACTIVE = false;
             this.context.SaveChanges();
         }
-
-        public PersonManager(MainContext Context) : base(Context) { }
     }
 }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cerberus.AbstractClasses;
 using Cerberus.Models;
+using Cerberus.Interfaces.ManagerInterfaces;
 
 namespace Cerberus.Managers
 {
-    public class AddressManager : AbstractManager
+    public class AddressManager : AbstractManager, IAddressManager
     {
         public AddressManager(MainContext Context) : base(Context)
         {
