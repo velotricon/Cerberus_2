@@ -8,9 +8,10 @@ using Cerberus.Models;
 namespace Cerberus.Migrations
 {
     [DbContext(typeof(MainContext))]
-    partial class MainContextModelSnapshot : ModelSnapshot
+    [Migration("20161008210912_mig_2016_10_08_v8")]
+    partial class mig_2016_10_08_v8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -70,8 +71,6 @@ namespace Cerberus.Migrations
                     b.Property<int>("ADDRESS_ID");
 
                     b.Property<int>("BANK_ACCOUNT_ID");
-
-                    b.Property<DateTime>("CREATE_DATE");
 
                     b.Property<bool>("IS_ACTIVE");
 

@@ -16,21 +16,20 @@ namespace Cerberus.Managers
 
         public void AddNewPermission(PERMISSION NewPermission)
         {
-            //if(this.context.PERMISSIONS.Any(x => x.PREM_CODE == NewPermission.PREM_CODE))
-            //{
-            //    throw new Exception("Permission with given code already exists in DB!");
-            //}
-            //else
-            //{
-            //    this.context.PERMISSIONS.Add(NewPermission);
-            //    this.context.SaveChanges();
-            //}
+            if (this.context.PERMISSIONS.Any(x => x.PREM_CODE == NewPermission.PREM_CODE))
+            {
+                throw new Exception("Permission with given code already exists in DB!");
+            }
+            else
+            {
+                this.context.PERMISSIONS.Add(NewPermission);
+                this.context.SaveChanges();
+            }
         }
 
         public List<PERMISSION> GetPermissions()
         {
-            //return this.context.PERMISSIONS.ToList();
-            throw new NotImplementedException();
+            return this.context.PERMISSIONS.ToList();
         }
     }
 }

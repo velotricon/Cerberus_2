@@ -8,9 +8,10 @@ using Cerberus.Models;
 namespace Cerberus.Migrations
 {
     [DbContext(typeof(MainContext))]
-    partial class MainContextModelSnapshot : ModelSnapshot
+    [Migration("20161008214416_mig_2016_10_08_v9")]
+    partial class mig_2016_10_08_v9
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

@@ -13,6 +13,7 @@ namespace Cerberus.Models
         public int ID { get; set; }
 
         public bool IS_ACTIVE { get; set; }
+        public DateTime CREATE_DATE { get; set; }
 
         public int ROLE_ID { get; set; }
         public int PERSON_ID { get; set; }
