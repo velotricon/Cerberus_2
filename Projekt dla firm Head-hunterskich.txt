@@ -39,4 +39,24 @@ Jaka jest specyfika pracy firmy head-hunterskiej?
 	- 	W górę hierarchii
 	Informacja powinna mieć swój priorytet. Niektóre informacje mogą wymagać potwierdzenia przeczytania przed odbiorcę (odbiorca potwierdza po przeczytaniu lub przed przeczytaniem).
 	
+6) Projekty
+	Praca w firmie head-hunterskiej opiera się na realizowaniu projektów. Projekt może np. zakładać znalezienie 3 handlowców dla jakiejś konkretnej firmy. Taki projekt później realizuje ktoś konkretny. Ktoś szuka ludzi, wysyła maile, ludzie odpowiadają na te maile (albo i nie). Potem ktoś inny dokonuje jakiejś selekcji. Na pewno w taki projekt jest zaangażowane kilka osób i każda z tych osób dostaje podczas trwania projektu różne zadania albo też jedna osoba dostaje jedno konkretne zadanie.
+	Właściwości projektu:
+	- Termin realizacji (jakaś data na kiedy trzeba ukończyć projekt)
+	- Kontrahent zlecający
+	- Inne warunki (jakie?)
+	- Zapotrzebowanie klienta 
+		(Tutaj trzeba by zdefiniować ilu i jakich pracowników klient potrzebuje. Na jakie stanowisko, jakie wymagania jakie widełki wypłaty itp)
+	- Zadania związane z realizacją projektu
+	- Zaangażowani pracownicy
+	Na pewno dobrze by było się dokładnie zorientować jak przebiega taki projekt.
+	
+6.1) Zespoły projektowe
+	Może by tak do zespołu przypisywać zespoły projektowe?
+	Może by tak tworzyć na stałe zespoły proejktowe?
+	Może by tak tworzyć zespoły projektowe tylko na czas jednego projektu?
+	
+6.2) System oceny wkładu pracownika w projekt.
+	Jedni pracownicy się napracują więcej, inni mniej. Można ich jakoś premiować w zależności od tego jakie zadania wykonują przy projekcie. 
+	
 	
