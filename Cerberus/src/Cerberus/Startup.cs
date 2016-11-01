@@ -39,6 +39,12 @@ namespace Cerberus
             services.AddScoped<IEmployeeManager, EmployeeManager>();
             services.AddScoped<IPersonManager, PersonManager>();
             services.AddScoped<IRoleManager, RoleManager>();
+            services.AddScoped<IUserManager, UserManager>();
+            services.AddScoped<IUserRoleManager, UserRoleManager>();
+
+            //Services:
+            services.AddScoped<IMembershipService, MembershipService>();
+            services.AddScoped<IEncryptionService, EncryptionService>();
 
             //services.AddIdentity
         }

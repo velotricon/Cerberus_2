@@ -1,11 +1,11 @@
 ﻿<div class="login">
     <div class="row">
         <label>Login</label>
-        <input type="text"/>
+        <input type="text" [(ngModel)]="UserName"/>
     </div>
     <div class="row">
         <label>Password</label>
-        <input type="password" />
+        <input type="password" [(ngModel)]="UserPassword"/>
     </div>
     <div class="row">
         <button (click)="LoginAction()">Log in</button>

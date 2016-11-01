@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Cerberus.Interfaces;
+using Cerberus.Models;
+using Cerberus.Interfaces.ManagerInterfaces;
+
+namespace Cerberus.Services
+{
+    public class MembershipService : IMembershipService
+    {
+        private readonly IUserManager user_manager;
+        private readonly IRoleManager role_manager;
+        private readonly IUserRoleManager user_role_manager;
+        private readonly IEncryptionService encryption_service;
+
+        public MembershipService(IUserManager UserManager, IRoleManager RoleManager,
+            IUserRoleManager UserRoleManager, IEncryptionService EncryptionService)
+        {
+            this.user_manager = UserManager;
+            this.role_manager = RoleManager;
+            this.user_role_manager = UserRoleManager;
+            this.encryption_service = EncryptionService;
+        }
+
+        public USER CreateUser(string Username, string Email, string Password, int[] Roles)
+        {
+            if (this.user_manager.UserExists(Username)) throw new Exception("User " + Username + " already exists!");
+            string password_salt = this.encryption_service.CreateSalt();
+            string hashed_password = this.encryption_service.EncryptPassword(Password, password_salt);
+            USER new_user = new USER()
+            {
+                LOGIN = Username,
+                EMAIL = Email,
+                IS_ACTIVE = true,
+                PASSWORD = hashed_password,
+                CREATE_DATE = DateTime.Now
+            };
+            
+            this.user_manager.AddUser(new_user);
+            throw new NotImplementedException();
+        }
+
+        public USER GetUser(int UserId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ROLE> GetUserRoles(string Username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MembershipContext ValidateUser(string Username, string Password)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

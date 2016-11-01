@@ -5,4 +5,9 @@ import { Observable }                                   from 'rxjs/Observable'
 @Injectable()
 export class IdentityService {
     constructor(private http: Http) { }
+
+    Login(UserName: string, Password: string) {
+        
+    }
 }
+

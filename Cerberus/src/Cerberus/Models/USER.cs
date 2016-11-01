@@ -16,10 +16,11 @@ namespace Cerberus.Models
         public string EMAIL { get; set; }
         public string LOGIN { get; set; }
         public string PASSWORD { get; set; }
+        public DateTime CREATE_DATE { get; set; }
 
-        public int ROLE_ID { get; set; }
-
-        [ForeignKey("ROLE_ID")]
-        public ROLE ROLE { get; set; }
+        //public int ROLE_ID { get; set; }
+        //
+        //[ForeignKey("ROLE_ID")]
+        //public ROLE ROLE { get; set; }
     }
 }

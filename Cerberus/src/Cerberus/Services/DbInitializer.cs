@@ -76,7 +76,7 @@ namespace Cerberus.Services
             else
             {
                 sup_rp = new ROLE_PERMISSION() { ROLE = super_user_role, PERMISSION = super_user_perm };
-                context.Add(sup_rp);
+                context.ROLE_PERMISSIONS.Add(sup_rp);
             }
 
             ROLE_PERMISSION std_rp;
@@ -87,7 +87,7 @@ namespace Cerberus.Services
             else
             {
                 std_rp = new ROLE_PERMISSION() { ROLE = standard_user_role, PERMISSION = standard_user_perm };
-                context.Add(std_rp);
+                context.ROLE_PERMISSIONS.Add(std_rp);
             }
 
 
@@ -98,8 +98,9 @@ namespace Cerberus.Services
             }
             else
             {
-                super_user = new USER() { EMAIL = "superuser@cerberus.com", LOGIN = "superuser", PASSWORD = "qw12qwas", ROLE_ID = super_user_role.ID };
-                context.Add(super_user);
+                super_user = new USER() { EMAIL = "superuser@cerberus.com", LOGIN = "superuser", PASSWORD = "qw12qwas", 
+                    CREATE_DATE = DateTime.Now/*ROLE_ID = super_user_role.ID*/ };
+                context.USERS.Add(super_user);
             }
 
             USER standard_user;
@@ -109,11 +110,45 @@ namespace Cerberus.Services
             }
             else
             {
-                standard_user = new USER() { EMAIL = "user@cerberus.com", LOGIN = "user", PASSWORD = "qw12qwas", ROLE_ID = standard_user_role.ID };
-                context.Add(standard_user);
+                standard_user = new USER() { EMAIL = "user@cerberus.com", LOGIN = "user", PASSWORD = "qw12qwas",
+                    CREATE_DATE = DateTime.Now/*ROLE_ID = standard_user_role.ID*/
+                };
+                context.USERS.Add(standard_user);
             }
 
-            context.SaveChanges();
+            context.SaveChanges(); //SAVE CHANGES
+
+            USER_ROLE user_role_super_user = null;
+            if (context.USER_ROLES.Any(x => x.USER_ID == super_user.ID && x.ROLE_ID == super_user_role.ID))
+            {
+                user_role_super_user = context.USER_ROLES.First(x => x.USER_ID == super_user.ID && x.ROLE_ID == super_user_role.ID);
+            }
+            else
+            {
+                user_role_super_user = new USER_ROLE()
+                {
+                    ROLE = super_user_role,
+                    USER = super_user
+                };
+                context.USER_ROLES.Add(user_role_super_user);
+            }
+            
+            USER_ROLE user_role_standard_user = null;
+            if(context.USER_ROLES.Any(x => x.USER_ID == standard_user.ID && x.ROLE_ID == standard_user_role.ID))
+            {
+                user_role_standard_user = context.USER_ROLES.First(x => x.USER_ID == standard_user.ID && x.ROLE_ID == standard_user_role.ID);
+            }
+            else
+            {
+                user_role_standard_user = new USER_ROLE()
+                {
+                    ROLE = standard_user_role,
+                    USER = standard_user
+                };
+                context.USER_ROLES.Add(user_role_standard_user);
+            }
+
+            context.SaveChanges(); //SAVE CHANGES
         }
     }
 }

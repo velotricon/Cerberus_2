@@ -12,6 +12,6 @@ export class LoginComponent {
     UserPassword: string;
 
     LoginAction(): void {
-        alert('login action');
+        this.service.Login(this.UserName, this.UserPassword);
     }
 }
