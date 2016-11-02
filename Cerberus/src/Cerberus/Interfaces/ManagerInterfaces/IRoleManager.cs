@@ -8,5 +8,6 @@ namespace Cerberus.Interfaces.ManagerInterfaces
 {
     public interface IRoleManager : IAbstractManager<ROLE>
     {
+        ROLE GetByName(string Name);
     }
 }

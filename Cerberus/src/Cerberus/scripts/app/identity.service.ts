@@ -6,8 +6,16 @@ import { Observable }                                   from 'rxjs/Observable'
 export class IdentityService {
     constructor(private http: Http) { }
 
-    Login(UserName: string, Password: string) {
+    Login(Username: string, Password: string) {
         
+    }
+
+    Register(Username: string, Email: string, Password: string) {
+        let new_user = {
+            Username: Username,
+            Email: Email,
+            Password: Password
+        }
     }
 }
 

@@ -1,3 +1,17 @@
 ﻿<div class="register">
-    register component
+    <div class="row">
+        <label>Login</label>
+        <input type="text" [(ngModel)]="Username" />
+    </div>
+    <div class="row">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="Email" />
+    </div>
+    <div class="row">
+        <label>Password</label>
+        <input type="password"[(ngModel)]="Password" />
+    </div>
+    <div class="row">
+        <button (click)="RegisterAction()">Register</button>
+    </div>
 </div>

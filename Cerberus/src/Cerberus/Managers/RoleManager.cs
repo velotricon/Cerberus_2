@@ -19,5 +19,10 @@ namespace Cerberus.Managers
 
             base.Add(NewRole);
         }
+
+        public ROLE GetByName(string Name)
+        {
+            return this.context.ROLES.Where(x => x.ROLE_NAME == Name && x.IS_ACTIVE == true).First();
+        }
     }
 }
