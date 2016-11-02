@@ -37,11 +37,25 @@ namespace Cerberus.Services
                 PASSWORD = hashed_password,
                 CREATE_DATE = DateTime.Now
             };
-            
-            
-            this.user_manager.Add(new_user);
-            //this.user_role_manager.AddUserRoles();
-            throw new NotImplementedException();
+
+            TransactionContext transaction_context = new TransactionContext();
+            transaction_context.AddContextUser(user_manager);
+            transaction_context.AddContextUser(user_role_manager);
+            transaction_context.BeginTransaction();
+            try
+            {
+                this.user_manager.Add(new_user);
+                this.user_manager.Commit();
+                this.user_role_manager.AddUserRoles(new_user.ID, Roles);
+                //Stuff here
+                transaction_context.CommtTransaction();
+            }
+            catch(Exception ex)
+            {
+                transaction_context.RollbackTransaction();
+                throw ex;
+            }
+            return new_user;
         }
 
         public USER GetUser(int UserId)

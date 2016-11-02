@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IAbstractManager<T> where T : class, IEntityBasic, new ()
+    public interface IAbstractManager<T> : IContextUser where T : class, IEntityBasic, new ()
     {
-        void Commit();
-        MainContext GetContext();
-        void SetContext(MainContext Context);
         T Get(int Id);
         void Add(T Entity);
         void Update(T Entity);
