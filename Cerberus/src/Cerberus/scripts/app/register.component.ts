@@ -13,7 +13,6 @@ export class RegisterComponent {
     Password: string;
 
     RegisterAction() {
-        this.service.Register(this.Username, this.Email, this.Password);
-        
+        let result = this.service.Register(this.Username, this.Email, this.Password).subscribe();
     }
 }

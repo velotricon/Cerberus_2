@@ -32,6 +32,7 @@ namespace Cerberus.Services
                 super_user_perm = new PERMISSION() { PREM_CODE = "SUPER_USER" };
                 context.PERMISSIONS.Add(super_user_perm);
             }
+            super_user_perm.IS_ACTIVE = true;
 
             PERMISSION standard_user_perm;
             if (context.PERMISSIONS.Any(x => x.PREM_CODE == "USER"))
@@ -43,6 +44,7 @@ namespace Cerberus.Services
                 standard_user_perm = new PERMISSION() { PREM_CODE = "USER" };
                 context.PERMISSIONS.Add(standard_user_perm);
             }
+            standard_user_perm.IS_ACTIVE = true;
 
             ROLE super_user_role;
             if (context.ROLES.Any(x => x.ROLE_NAME == "SuperUser"))
@@ -54,6 +56,7 @@ namespace Cerberus.Services
                 super_user_role = new ROLE() { ROLE_NAME = "SuperUser" };
                 context.ROLES.Add(super_user_role);
             }
+            super_user_role.IS_ACTIVE = true;
 
             ROLE standard_user_role;
             if (context.ROLES.Any(x => x.ROLE_NAME == "User"))
@@ -65,6 +68,7 @@ namespace Cerberus.Services
                 standard_user_role = new ROLE() { ROLE_NAME = "User" };
                 context.ROLES.Add(standard_user_role);
             }
+            standard_user_role.IS_ACTIVE = true;
 
             context.SaveChanges();
 
@@ -78,6 +82,7 @@ namespace Cerberus.Services
                 sup_rp = new ROLE_PERMISSION() { ROLE = super_user_role, PERMISSION = super_user_perm };
                 context.ROLE_PERMISSIONS.Add(sup_rp);
             }
+            sup_rp.IS_ACTIVE = true;
 
             ROLE_PERMISSION std_rp;
             if (context.ROLE_PERMISSIONS.Any(x => x.PERMISSION_ID == standard_user_perm.ID && x.ROLE_ID == standard_user_role.ID))
@@ -89,6 +94,7 @@ namespace Cerberus.Services
                 std_rp = new ROLE_PERMISSION() { ROLE = standard_user_role, PERMISSION = standard_user_perm };
                 context.ROLE_PERMISSIONS.Add(std_rp);
             }
+            std_rp.IS_ACTIVE = true;
 
 
             USER super_user;
@@ -102,6 +108,7 @@ namespace Cerberus.Services
                     CREATE_DATE = DateTime.Now/*ROLE_ID = super_user_role.ID*/ };
                 context.USERS.Add(super_user);
             }
+            super_user.IS_ACTIVE = true;
 
             USER standard_user;
             if (context.USERS.Any(x => x.EMAIL == "user@cerberus.com" && x.LOGIN == "user"))
@@ -115,6 +122,7 @@ namespace Cerberus.Services
                 };
                 context.USERS.Add(standard_user);
             }
+            standard_user.IS_ACTIVE = true;
 
             context.SaveChanges(); //SAVE CHANGES
 
@@ -132,6 +140,7 @@ namespace Cerberus.Services
                 };
                 context.USER_ROLES.Add(user_role_super_user);
             }
+            user_role_super_user.IS_ACTIVE = true;
             
             USER_ROLE user_role_standard_user = null;
             if(context.USER_ROLES.Any(x => x.USER_ID == standard_user.ID && x.ROLE_ID == standard_user_role.ID))
@@ -147,6 +156,7 @@ namespace Cerberus.Services
                 };
                 context.USER_ROLES.Add(user_role_standard_user);
             }
+            user_role_standard_user.IS_ACTIVE = true;
 
             context.SaveChanges(); //SAVE CHANGES
         }

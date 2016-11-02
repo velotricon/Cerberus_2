@@ -108,6 +108,7 @@ namespace Cerberus.AbstractClasses
 
         public virtual void Add(T Entity)
         {
+            Entity.IS_ACTIVE = true;
             EntityEntry dbEntityEntry = this.context.Entry<T>(Entity);
             this.context.Set<T>().Add(Entity);
         }

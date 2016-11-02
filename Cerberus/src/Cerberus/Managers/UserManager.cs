@@ -22,7 +22,7 @@ namespace Cerberus.Managers
 
         public bool UserExists(string UserName)
         {
-            throw new NotImplementedException();
+            return this.context.USERS.Any(x => x.IS_ACTIVE == true && x.LOGIN == UserName);
         }
     }
 }
