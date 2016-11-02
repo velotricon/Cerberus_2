@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IEmployeeManager
+    public interface IEmployeeManager : IAbstractManager<EMPLOYEE>
     {
-        List<EMPLOYEE> GetActiveEmployees();
-        void AddEmployee(EMPLOYEE NewEmployee);
     }
 }

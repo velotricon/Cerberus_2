@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IPersonManager
+    public interface IPersonManager : IAbstractManager<PERSON>
     {
-        void AddPerson(PERSON NewPerson);
-        void UpdatePerson(PERSON Person);
-        List<PERSON> GetActivePersons();
-        PERSON GetPerson(int PersonId);
-        void DeactivatePerson(int PersonId);
     }
 }

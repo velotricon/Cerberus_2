@@ -34,7 +34,7 @@ namespace Cerberus
 
             //Managers:
             services.AddScoped<IAddressManager, AddressManager>();
-            services.AddScoped<IAuthManager, AuthManager>();
+            //services.AddScoped<IAuthManager, AuthManager>();
             services.AddScoped<IBankAccountManager, BankAccountManager>();
             services.AddScoped<IEmployeeManager, EmployeeManager>();
             services.AddScoped<IPersonManager, PersonManager>();

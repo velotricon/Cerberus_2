@@ -38,7 +38,9 @@ namespace Cerberus.Services
                 CREATE_DATE = DateTime.Now
             };
             
-            this.user_manager.AddUser(new_user);
+            
+            this.user_manager.Add(new_user);
+            //this.user_role_manager.AddUserRoles();
             throw new NotImplementedException();
         }
 

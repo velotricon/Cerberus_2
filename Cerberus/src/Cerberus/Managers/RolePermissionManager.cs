@@ -8,7 +8,7 @@ using Cerberus.Interfaces.ManagerInterfaces;
 
 namespace Cerberus.Managers
 {
-    public class RolePermissionManager : AbstractManager, IRolePermissionManager
+    public class RolePermissionManager : AbstractManager<ROLE_PERMISSION>, IRolePermissionManager
     {
         public RolePermissionManager(MainContext Context) : base(Context)
         {
@@ -20,13 +20,12 @@ namespace Cerberus.Managers
             {
                 throw new Exception("This role already have given permission");
             }
-            else
-            {
-                ROLE_PERMISSION new_role_perm = new ROLE_PERMISSION();
-                new_role_perm.ROLE_ID = RoleId;
-                new_role_perm.PERMISSION_ID = PermissionId;
-                this.context.Add(new_role_perm);
-            }
+
+            ROLE_PERMISSION new_role_perm = new ROLE_PERMISSION();
+            new_role_perm.ROLE_ID = RoleId;
+            new_role_perm.PERMISSION_ID = PermissionId;
+
+            base.Add(new_role_perm);
         }
 
         public List<PERMISSION> GetRolePermissions(int RoleId)

@@ -22,7 +22,7 @@ namespace Cerberus.Controllers
         public IEnumerable<EMPLOYEE> Get()
         {
             EmployeeManager manager = new EmployeeManager(this.context);
-            return manager.GetActiveEmployees();
+            return manager.GetAllActive();
         }
 
         // GET api/values/5
@@ -37,7 +37,7 @@ namespace Cerberus.Controllers
         public int Post([FromBody]EMPLOYEE value)
         {
             EmployeeManager manager = new EmployeeManager(this.context);
-            manager.AddEmployee(value);
+            manager.Add(value);
             return value.ID;
         }
 

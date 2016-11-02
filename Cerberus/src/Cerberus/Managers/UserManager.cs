@@ -8,18 +8,16 @@ using Cerberus.AbstractClasses;
 
 namespace Cerberus.Managers
 {
-    public class UserManager : AbstractManager, IUserManager
+    public class UserManager : AbstractManager<USER>, IUserManager
     {
         public UserManager(MainContext Context) : base(Context) { }
 
-        public void AddUser(USER NewUser)
+        public override void Add(USER NewUser)
         {
             if (this.context.USERS.Any(x => x.LOGIN == NewUser.LOGIN)) throw new Exception("User " + NewUser.LOGIN + " already exists!");
             if (this.context.USERS.Any(x => x.EMAIL == NewUser.EMAIL)) throw new Exception("This email is already in use!");
 
-            NewUser.IS_ACTIVE = true;
-            this.context.USERS.Add(NewUser);
-            this.save_changes();
+            base.Add(NewUser);
         }
 
         public bool UserExists(string UserName)

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Cerberus.Interfaces;
 
 namespace Cerberus.Models
 {
-    public class ADDRESS
+    public class ADDRESS : IEntityBasic 
     {
         [Key]
         public int ID { get; set; }

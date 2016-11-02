@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IBankAccountManager
+    public interface IBankAccountManager : IAbstractManager<BANK_ACCOUNT>
     {
-        void AddNewBankAccount(BANK_ACCOUNT NewAccount);
+        
     }
 }

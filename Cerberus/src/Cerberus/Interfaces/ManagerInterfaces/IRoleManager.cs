@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IRoleManager
+    public interface IRoleManager : IAbstractManager<ROLE>
     {
-        List<ROLE> GetActiveRoles();
-        void AddNewRole(ROLE NewRole);
     }
 }

@@ -8,15 +8,10 @@ using Cerberus.Interfaces.ManagerInterfaces;
 
 namespace Cerberus.Managers
 {
-    public class BankAccountManager : AbstractManager, IBankAccountManager
+    public class BankAccountManager : AbstractManager<BANK_ACCOUNT>, IBankAccountManager
     {
         public BankAccountManager(MainContext Context) : base(Context)
         {
-        }
-
-        public void AddNewBankAccount(BANK_ACCOUNT NewAccount)
-        {
-            
         }
     }
 }

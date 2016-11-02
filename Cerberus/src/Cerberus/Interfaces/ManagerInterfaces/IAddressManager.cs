@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IAddressManager
+    public interface IAddressManager : IAbstractManager<ADDRESS>
     {
-        void AddNewAddress(ADDRESS NewAddress);
-        List<ADDRESS> GetActiveAddresses();
+        
     }
 }

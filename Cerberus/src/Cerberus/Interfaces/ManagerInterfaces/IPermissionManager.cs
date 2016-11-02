@@ -6,9 +6,7 @@ using Cerberus.Models;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IPermissionManager
+    public interface IPermissionManager : IAbstractManager<PERMISSION>
     {
-        void AddNewPermission(PERMISSION NewPermission);
-        List<PERMISSION> GetPermissions();
     }
 }

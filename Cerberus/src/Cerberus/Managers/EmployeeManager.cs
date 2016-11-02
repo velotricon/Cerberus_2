@@ -8,20 +8,9 @@ using Cerberus.Interfaces.ManagerInterfaces;
 
 namespace Cerberus.Managers
 {
-    public class EmployeeManager : AbstractManager, IEmployeeManager
+    public class EmployeeManager : AbstractManager<EMPLOYEE>, IEmployeeManager
     {
         public EmployeeManager(MainContext Context) : base(Context) { }
-
-        public List<EMPLOYEE> GetActiveEmployees()
-        {
-            return this.context.EMPLOYEES.Where(x => x.IS_ACTIVE == true).ToList();
-        }
-
-        public void AddEmployee(EMPLOYEE NewEmployee)
-        {
-            NewEmployee.IS_ACTIVE = true;
-            this.context.EMPLOYEES.Add(NewEmployee);
-            this.context.SaveChanges();
-        }
+       
     }
 }

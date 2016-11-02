@@ -27,7 +27,7 @@ namespace Cerberus.Controllers
         public IEnumerable<PERSON> Get()
         {
             PersonManager manager = new PersonManager(this.context);
-            List<PERSON> person_list = manager.GetActivePersons();
+            IEnumerable<PERSON> person_list = manager.GetAllActive();
             return person_list;
         }
 
@@ -43,7 +43,7 @@ namespace Cerberus.Controllers
         public int Post([FromBody]PERSON value)
         {
             PersonManager manager = new PersonManager(this.context);
-            manager.AddPerson(value);
+            manager.Add(value);
             return value.ID;
         }
 

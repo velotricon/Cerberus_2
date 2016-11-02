@@ -23,7 +23,7 @@ namespace Cerberus.Controllers
         public IEnumerable<ROLE> Get()
         {
             RoleManager manager = new RoleManager(this.context);
-            return manager.GetActiveRoles();
+            return manager.GetAllActive();
         }
 
         // GET api/values/5
@@ -38,7 +38,7 @@ namespace Cerberus.Controllers
         public int Post([FromBody]ROLE value)
         {
             RoleManager manager = new RoleManager(this.context);
-            manager.AddNewRole(value);
+            manager.Add(value);
             return value.ID;
         }
 

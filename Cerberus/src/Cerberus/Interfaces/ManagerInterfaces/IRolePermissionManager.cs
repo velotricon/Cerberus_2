@@ -6,7 +6,7 @@ using Cerberus.Models;
 
 namespace Cerberus.Interfaces.ManagerInterfaces
 {
-    public interface IRolePermissionManager
+    public interface IRolePermissionManager : IAbstractManager<ROLE_PERMISSION>
     {
         List<PERMISSION> GetRolePermissions(int RoleId);
         void AddPermissionToRole(int RoleId, int PermissionId);

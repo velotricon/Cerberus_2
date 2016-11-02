@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Cerberus.Interfaces;
 
 namespace Cerberus.Models
 {
-    public class USER
+    public class USER : IEntityBasic
     {
         [Key]
         public int ID { get; set; }

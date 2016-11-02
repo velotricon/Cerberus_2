@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Cerberus.Interfaces;
 
 namespace Cerberus.Models
 {
-    public class BANK_ACCOUNT
+    public class BANK_ACCOUNT : IEntityBasic
     {
         [Key]
         public int ID { get; set; }
