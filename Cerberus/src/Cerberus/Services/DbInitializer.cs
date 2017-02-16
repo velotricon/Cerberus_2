@@ -4,16 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cerberus.Models;
 using Cerberus.Managers;
+using Cerberus.Interfaces;
 
 namespace Cerberus.Services
 {
     public class DbInitializer
     {
         private static MainContext context;
+        private static IMembershipService membership_service;
 
         public static void Initialize(IServiceProvider AppServiceProvider)
         {
             context = (MainContext)AppServiceProvider.GetService(typeof(MainContext));
+            membership_service = (IMembershipService)AppServiceProvider.GetService(typeof(IMembershipService));
             //InitializeSection
             InitUsersAndRoles();
             //end-of-InitializeSection
@@ -104,9 +107,10 @@ namespace Cerberus.Services
             }
             else
             {
-                super_user = new USER() { EMAIL = "superuser@cerberus.com", LOGIN = "superuser", PASSWORD = "qw12qwas", 
-                    CREATE_DATE = DateTime.Now/*ROLE_ID = super_user_role.ID*/ };
-                context.USERS.Add(super_user);
+                //super_user = new USER() { EMAIL = "superuser@cerberus.com", LOGIN = "superuser", PASSWORD = "qw12qwas", 
+                //CREATE_DATE = DateTime.Now/*ROLE_ID = super_user_role.ID*/ };
+                //context.USERS.Add(super_user);
+                super_user = membership_service.CreateUser("superuser", "superuser@cerberus.com", "qw12qwas", new int[] { super_user_role.ID });
             }
             super_user.IS_ACTIVE = true;
 
@@ -117,10 +121,11 @@ namespace Cerberus.Services
             }
             else
             {
-                standard_user = new USER() { EMAIL = "user@cerberus.com", LOGIN = "user", PASSWORD = "qw12qwas",
-                    CREATE_DATE = DateTime.Now/*ROLE_ID = standard_user_role.ID*/
-                };
-                context.USERS.Add(standard_user);
+                //standard_user = new USER() { EMAIL = "user@cerberus.com", LOGIN = "user", PASSWORD = "qw12qwas",
+                //    CREATE_DATE = DateTime.Now/*ROLE_ID = standard_user_role.ID*/
+                //};
+                //context.USERS.Add(standard_user);
+                standard_user = membership_service.CreateUser("user", "user@cerberus.com", "qw12qwas", new int[] { standard_user_role.ID });
             }
             standard_user.IS_ACTIVE = true;
 

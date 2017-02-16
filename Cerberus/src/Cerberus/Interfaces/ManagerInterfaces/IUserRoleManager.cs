@@ -9,5 +9,6 @@ namespace Cerberus.Interfaces.ManagerInterfaces
     public interface IUserRoleManager : IAbstractManager<USER_ROLE>
     {
         void AddUserRoles(int UserId, int[] RoleIds);
+        List<ROLE> GetUserRoles(int UserId);
     }
 }

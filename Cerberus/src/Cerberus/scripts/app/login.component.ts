@@ -12,6 +12,6 @@ export class LoginComponent {
     UserPassword: string;
 
     LoginAction(): void {
-        this.service.Login(this.UserName, this.UserPassword);
+        let result = this.service.Login(this.UserName, this.UserPassword).subscribe();
     }
 }

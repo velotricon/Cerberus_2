@@ -9,5 +9,6 @@ namespace Cerberus.Interfaces.ManagerInterfaces
     public interface IUserManager : IAbstractManager<USER>
     {
         bool UserExists(string UserName);
+        USER GetByName(string UserName);
     }
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Cerberus.Interfaces;
 using Cerberus.Models;
 using Cerberus.Interfaces.ManagerInterfaces;
+using System.Security.Principal;
 
 namespace Cerberus.Services
 {
@@ -35,6 +36,7 @@ namespace Cerberus.Services
                 EMAIL = Email,
                 IS_ACTIVE = true,
                 PASSWORD = hashed_password,
+                SALT = password_salt,
                 CREATE_DATE = DateTime.Now
             };
 
@@ -60,17 +62,45 @@ namespace Cerberus.Services
 
         public USER GetUser(int UserId)
         {
-            throw new NotImplementedException();
+            USER user = this.user_manager.Get(UserId);
+            if (user != null)
+                return user;
+            else
+                throw new Exception("User does not exist.");
         }
 
         public List<ROLE> GetUserRoles(string Username)
         {
-            throw new NotImplementedException();
+            USER user = this.user_manager.GetByName(Username);
+            return this.user_role_manager.GetUserRoles(user.ID);
         }
 
         public MembershipContext ValidateUser(string Username, string Password)
         {
-            throw new NotImplementedException();
+            MembershipContext membership_context = new MembershipContext();
+            if(this.IsUserValid(Username, Password))
+            {
+                membership_context.User = this.user_manager.GetByName(Username);
+                GenericIdentity identity = new GenericIdentity(Username);
+                membership_context.Principal = new GenericPrincipal(
+                    identity,
+                    this.GetUserRoles(Username).Select(x => x.ROLE_NAME).ToArray()
+                    );
+            }
+            return membership_context;
+        }
+
+        private bool IsUserValid(string Username, string Password)
+        {
+            if (this.user_manager.UserExists(Username))
+            {
+                USER user = this.user_manager.GetByName(Username);
+                if (user.PASSWORD == this.encryption_service.EncryptPassword(Password, user.SALT))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

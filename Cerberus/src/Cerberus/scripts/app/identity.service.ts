@@ -6,8 +6,16 @@ import { Observable }                                   from 'rxjs/Observable'
 export class IdentityService {
     constructor(private http: Http) { }
 
-    Login(Username: string, Password: string) {
-        
+    Login(Username: string, Password: string): Observable<boolean> {
+        let body = JSON.stringify({
+            Username: Username,
+            Password: Password,
+            RememberMe: false
+        });
+
+        let headers = new Headers({ 'Content-type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post('api/account/authenticate/', body, options).map(this.map_generic_result_container).catch(this.handle_error);
     }
 
     Register(Username: string, Email: string, Password: string): Observable<boolean>{

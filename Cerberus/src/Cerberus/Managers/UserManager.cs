@@ -24,5 +24,14 @@ namespace Cerberus.Managers
         {
             return this.context.USERS.Any(x => x.IS_ACTIVE == true && x.LOGIN == UserName);
         }
+
+        public USER GetByName(string UserName)
+        {
+            USER user = this.context.USERS.Where(x => x.LOGIN == UserName).First();
+            if (user != null)
+                return user;
+            else
+                throw new Exception("User with given name does not exist.");
+        }
     }
 }

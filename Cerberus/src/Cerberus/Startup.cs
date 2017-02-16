@@ -65,6 +65,12 @@ namespace Cerberus
             app.UseDefaultFiles(options);
             app.UseStaticFiles();
 
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true
+            });
+
             app.UseMvc();
             //app.Run(async (context) =>
             //{

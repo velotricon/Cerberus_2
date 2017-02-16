@@ -8,9 +8,10 @@ using Cerberus.Models;
 namespace Cerberus.Migrations
 {
     [DbContext(typeof(MainContext))]
-    partial class MainContextModelSnapshot : ModelSnapshot
+    [Migration("20170208184744_mig1")]
+    partial class mig1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -170,8 +171,6 @@ namespace Cerberus.Migrations
                     b.Property<string>("LOGIN");
 
                     b.Property<string>("PASSWORD");
-
-                    b.Property<string>("SALT");
 
                     b.HasKey("ID");
 

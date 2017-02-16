@@ -29,5 +29,10 @@ namespace Cerberus.Managers
                 });
             }
         }
+
+        public List<ROLE> GetUserRoles(int UserId)
+        {
+            return this.context.USER_ROLES.Where(x => x.USER_ID == UserId).Select(x => x.ROLE).ToList();
+        }
     }
 }
