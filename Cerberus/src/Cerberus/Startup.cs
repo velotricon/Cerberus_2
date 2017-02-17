@@ -46,7 +46,11 @@ namespace Cerberus
             services.AddScoped<IMembershipService, MembershipService>();
             services.AddScoped<IEncryptionService, EncryptionService>();
 
-            //services.AddIdentity
+            services.AddAuthentication();
+            services.AddAuthorization(options =>
+            {
+                
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,6 +7,7 @@ using Cerberus.Models;
 using Newtonsoft.Json;
 using Cerberus.Managers;
 using Cerberus.AbstractClasses;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,6 +24,7 @@ namespace Cerberus.Controllers
         }
 
         // GET: api/values
+        [Authorize(Roles = "SuperUser")]
         [HttpGet]
         public IEnumerable<PERSON> Get()
         {

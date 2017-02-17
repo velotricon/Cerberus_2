@@ -30,12 +30,6 @@ namespace Cerberus.Controllers
             this.user_manager = UserManager;
             this.role_manager = RoleManager;
         }
-
-        [HttpPost]
-        public void Test()
-        {
-
-        }
         
         [HttpPost("authenticate")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel User)
@@ -50,8 +44,11 @@ namespace Cerberus.Controllers
                 if(user_context.User != null)
                 {
                     List<Claim> claims = new List<Claim>();
-                    //this.membership_service.GetUserRoles();
-                    claims.Add(new Claim(ClaimTypes.Role, "Admin", ClaimValueTypes.String, User.Username)); //Tutaj trzeba by wyciągać uprawnienia z bazy
+                    List<ROLE> roles = this.membership_service.GetUserRoles(User.Username);
+                    foreach(ROLE role in roles)
+                    {
+                        claims.Add(new Claim(ClaimTypes.Role, role.ROLE_NAME, ClaimValueTypes.String, User.Username));
+                    }
 
                     await HttpContext.Authentication.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme)),
