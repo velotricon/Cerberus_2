@@ -1,2 +1,42 @@
 1) Menu:
-Trzeba zamknąć menu w ramach jednego componentu, czyli przenieść praktycznie wszystko z menu-item do menu
+	- Trzeba zamknąć menu w ramach jednego componentu, czyli przenieść praktycznie wszystko z menu-item do menu.
+	- Chyba trzeba składać menu od strony aplikacji.
+	
+2) Zorientować się co zrobić, żeby podczas migracji nie tracić danych przechowywanych w bazie danych.
+
+3) Obiekty do zrobienia:
+	a) Kontakt
+	b) Kontrahent
+	c) Dostawca
+	d) Faktura
+	e) Proforma
+	f) Dokumenty magazynowe (WZ, PZ itp)
+	
+4) Komunikaty o błędach
+	- Pokazywanie odpowiednich błędów użytkownikowi
+	
+	
+5) Obsługa wyjątków
+	- Logowanie wyjątków
+	
+6) Logowanie
+	- Samo logowanie jest niby gotowe ale trzeba to obsłużyć jakoś od strony skryptów.
+	- Dać możliwość wylogowania
+	- Jak jestem zalogowany to pokazać jako kto jestem zalogowany
+	- Ustawienia konta (w ogóle możliwość wejścia w moje konto użytkownika)
+	
+7) Translacje
+	- Przydadzą się chociaży do menu
+	- Wraz z użytkownikiem trzeba by trzymać gdzieś jego lokalizację (pl-PL)
+		
+	
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Kolejność:
+
+Komunikaty o błędach
+Logowanie
+Translacje
+Menu
