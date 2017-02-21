@@ -1,0 +1,7 @@
+Samo logowanie jest niby gotowe ale trzeba to obsłużyć jakoś od strony skryptów.
+Czyli trzeba:
+1) Dodać możliwość wylogowania
+2) Pokać jako kto jestem zalogowany
+3) Ustawienia konta (to zupełnie na później)
+	- Możliwość usunięcia konta?
+	- Co tu jeszcze dodać?

@@ -11,6 +11,7 @@ using Cerberus.Containers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -29,6 +30,45 @@ namespace Cerberus.Controllers
             this.membership_service = MembershipService;
             this.user_manager = UserManager;
             this.role_manager = RoleManager;
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult GetAccountInfo()
+        {
+            GenericResultContainer profile_result = new GenericResultContainer();
+            try
+            {
+                profile_result = new GenericResultContainer()
+                {
+                    Succeeded = false,
+                    Message = "Test"
+                };
+            }
+            catch(Exception ex)
+            {
+                profile_result = new GenericResultContainer()
+                {
+                    Succeeded = false,
+                    Message = ex.Message
+                };
+            }
+            IActionResult result = new ObjectResult(profile_result);
+            return result;
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            try
+            {
+                await this.HttpContext.Authentication.SignOutAsync("Cookies");
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return BadRequest();
+            }
         }
         
         [HttpPost("authenticate")]
@@ -110,39 +150,6 @@ namespace Cerberus.Controllers
             }
 
             return new ObjectResult(result_container);
-        }
-
-
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

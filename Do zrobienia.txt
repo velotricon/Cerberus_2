@@ -12,8 +12,11 @@
 	e) Proforma
 	f) Dokumenty magazynowe (WZ, PZ itp)
 	
-4) Komunikaty o błędach
+4) Komunikaty dla użytkownika
 	- Pokazywanie odpowiednich błędów użytkownikowi
+	- Komunikaty informacyjne
+	- Komunikaty informujące o przetwarzaniu
+	- Informacja o powodzeniu operacji
 	
 	
 5) Obsługa wyjątków

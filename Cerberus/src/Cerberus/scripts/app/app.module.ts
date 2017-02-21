@@ -18,6 +18,7 @@ import { BackButtonComponent }      from './back.button.component';
 import { PersonAddComponent }       from './person.add.component';
 import { RegisterComponent }        from './register.component';
 import { LoginComponent }           from './login.component';
+import { ProfileComponent }         from './profile.component';
 
 //Services:
 import { MenuService }              from './menu.service';
@@ -42,7 +43,8 @@ import { IdentityService }          from './identity.service';
         BackButtonComponent,
         PersonAddComponent,
         RegisterComponent,
-        LoginComponent
+        LoginComponent,
+        ProfileComponent
     ],
     bootstrap: [AppComponent],
     providers: [

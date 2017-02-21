@@ -6,7 +6,6 @@ import { MenuService, MenuItem }            from './menu.service';
     selector: 'menu',
     templateUrl: './templates/menu.html'
 })
-
 export class MenuComponent implements OnInit {
     constructor(private service: MenuService) {
     }

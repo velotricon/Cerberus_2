@@ -30,6 +30,12 @@ export class IdentityService {
         return this.http.post('api/account/register', body, options).map(this.map_generic_result_container).catch(this.handle_error);
     }
 
+    GetUserInfo(): Observable<boolean> {
+        let headers = new Headers({ 'Content-type': 'application/json' });
+        //let options = new RequestOptions({ headers: headers });
+        return this.http.get('api/account/GetAccountInfo').map(this.map_generic_result_container).catch(this.handle_error);
+    }
+
     private handle_error(error: any) {
         return Observable.throw(error.status + ': ' + error.statusText);
     }

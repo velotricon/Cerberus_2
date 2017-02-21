@@ -11,7 +11,3 @@ import './rxjs.operators';
 export class AppComponent {
     
 }
-
-export class TestObj {
-    TmpVal: string;
-}
