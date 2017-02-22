@@ -1,6 +1,21 @@
 ﻿body {
+    font-family: Calibri, Verdana;
 }
 
 table.light-grid tr.clickable {
     cursor: pointer;
 }
+
+div.notification {
+    max-width: 400px;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    background-color: rgba(254, 210, 0, 0.75);
+    padding: 20px 10px 20px 10px;
+}
+
+    div.notification div.header {
+        font-size: larger;
+        font-weight: bolder;
+    }

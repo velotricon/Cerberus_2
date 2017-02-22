@@ -19,6 +19,7 @@ import { PersonAddComponent }       from './person.add.component';
 import { RegisterComponent }        from './register.component';
 import { LoginComponent }           from './login.component';
 import { ProfileComponent }         from './profile.component';
+import { NotificationComponent }    from './notification.component';
 
 //Services:
 import { MenuService }              from './menu.service';
@@ -44,7 +45,8 @@ import { IdentityService }          from './identity.service';
         PersonAddComponent,
         RegisterComponent,
         LoginComponent,
-        ProfileComponent
+        ProfileComponent,
+        NotificationComponent
     ],
     bootstrap: [AppComponent],
     providers: [

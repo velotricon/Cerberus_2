@@ -13,11 +13,15 @@ export class ProfileComponent implements OnInit {
     @Output() StatusPublisher = new EventEmitter<StatusContainer>();
 
     private model_success(RequestResutlt: Object) {
-        alert('1');
+        //alert('1');
     }
 
     private model_error(Error: any) {
-        alert('2');
+        //alert('2');
+    }
+
+    public hello_world(): void {
+        alert('Hello world!');
     }
 
     ngOnInit(): void {
