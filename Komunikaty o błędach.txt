@@ -1,3 +1,5 @@
 Do zrobienia:
 1) Zamykanie okienka
 2) Przyciski do potwierdzenia (OK, Tak, Nie, Anuluj).
+
+https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#bidirectional-service
