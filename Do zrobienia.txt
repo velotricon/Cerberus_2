@@ -17,6 +17,7 @@
 	- Komunikaty informacyjne
 	- Komunikaty informujące o przetwarzaniu
 	- Informacja o powodzeniu operacji
+	- 
 	
 	
 5) Obsługa wyjątków
@@ -32,7 +33,7 @@
 	- Przydadzą się chociaży do menu
 	- Wraz z użytkownikiem trzeba by trzymać gdzieś jego lokalizację (pl-PL)
 		
-	
+8) Czy da się zrobić tak, żeby komponent dziedziczący po AbstractComponent nie musiał przekazywać wszystkich serviców w konstruktorze?	
 	
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

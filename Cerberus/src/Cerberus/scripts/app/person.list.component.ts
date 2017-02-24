@@ -31,6 +31,8 @@ export class PersonListComponent extends AbstractComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.ShowNotification("Notification 1", "Test notification from person.list.component");
+
         this.service.GetPersonArray().subscribe(
             result => this.model_success(result),
             error => this.model_error(error)

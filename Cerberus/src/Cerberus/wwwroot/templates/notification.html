@@ -1,8 +1,10 @@
-﻿<div class="notification">
+﻿<div class="notification" *ngIf="is_visible">
     <div>
-        <div class="header">Test header</div>
+        <div class="header">{{current_title}}</div>
+        <div class="close-btn" (click)="close_click()"></div>
         <div class="content">
-            test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content test content 
+            {{current_content}}
         </div>
+        <div class="buttons"></div>
     </div>
 </div>

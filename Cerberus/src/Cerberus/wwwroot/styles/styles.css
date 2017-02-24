@@ -8,7 +8,7 @@ table.light-grid tr.clickable {
 
 div.notification {
     max-width: 400px;
-    position: absolute;
+    /*position: absolute;*/
     top: 10%;
     left: 35%;
     background-color: rgba(254, 210, 0, 0.75);
@@ -18,4 +18,14 @@ div.notification {
     div.notification div.header {
         font-size: larger;
         font-weight: bolder;
+        display: inline-block;
+        width: 90%;
+    }
+
+    div.notification div.close-btn {
+        background-image: url("../graphics/quit_x_opacity_small.png");
+        width: 17px;
+        height: 17px;
+        display: inline-block;
+        cursor: pointer;
     }
