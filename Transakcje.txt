@@ -1,0 +1,14 @@
+Jak zorganizować transakcje?
+
+Wymagania dla transakcji:
+1) Kilka managerów musi dzielić wspólny context. 
+	- Jest to dość istotny problem, gdyż mechanizm DependencyInjection wstrzykuje w tym momencie do każdego managera inny obiekt context'u.
+	- Rozwiązaniem było by podmienianie context'u już po wstrzyknięciu do kontrollera, czy usługi. Podmiana może odbywać się w konstruktorze usługi.
+	- Inne rozwiązanie to stworzenie obiektu klasy TransactionContext, który trzymał by sobie referencje do wszystkich managerów, biorących udział w transakcji i podawał im odpowiednie context dopiero gdy będzie to konieczne.
+	- Kolejne rozwiązanie to manualne tworzenie managerów w konstruktorze servic'u. To chyba najgorsze z możliwych rozwiązań, gdyż cały mechanizm DependencyIjnection psu w dupę.
+	
+	[HttpPost("authenticate")]
+        public async Task<IActionResult> Login([FromBody] LoginViewModel User)
+        {
+            throw new NotImplementedException();
+        }

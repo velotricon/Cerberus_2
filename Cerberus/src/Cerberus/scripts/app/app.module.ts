@@ -26,6 +26,7 @@ import { MenuService }              from './menu.service';
 import { PersonService }            from './person.service';
 import { LoggerService }            from './logger.service';
 import { IdentityService }          from './identity.service';
+import { NotificationService }      from './notification.service';
 
 @NgModule({
     imports: [
