@@ -1,4 +1,4 @@
-﻿import { Person }   from './person';
+﻿import { Person }   from '../person';
 
 export const PERSON_ARRAY: Person[] = [
     { Id: 1, Name: 'Marian', Surname: 'Kowalski' },

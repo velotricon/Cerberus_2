@@ -1,5 +1,5 @@
 ﻿import { Component }        from '@angular/core';
-import { PersonService }    from './person.service';
+import { PersonService }    from '../services/person.service';
 
 @Component({
     selector: 'person-add',

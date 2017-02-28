@@ -1,6 +1,6 @@
 ﻿import { Output, EventEmitter }     from '@angular/core';
-import { LoggerService }            from '../logger.service';
-import { NotificationService }      from '../notification.service';
+import { LoggerService }            from '../services/logger.service';
+import { NotificationService }      from '../services/notification.service';
 import { NotificationContainer }    from '../containers/notification.container';
 
 export class AbstractComponent {

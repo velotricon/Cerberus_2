@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
-import { Person }                   from './person';
-import { PersonService }            from './person.service';
+import { Person }                   from '../person';
+import { PersonService }            from '../services/person.service';
 
 @Component({
     selector: 'person-view',

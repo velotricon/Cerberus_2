@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit, EventEmitter, Output }      from '@angular/core';
-import { IdentityService }                              from './identity.service';
-import { StatusContainer }                              from './containers/status.container';
+import { IdentityService }                              from '../services/identity.service';
+import { StatusContainer }                              from '../containers/status.container';
 
 @Component({
     selector: 'profile',

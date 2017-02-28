@@ -1,5 +1,5 @@
 ﻿import { Component }        from '@angular/core'
-import { IdentityService }  from './identity.service'
+import { IdentityService }  from '../services/identity.service'
 
 @Component({
     selector: 'register',

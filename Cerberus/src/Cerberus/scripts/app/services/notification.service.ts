@@ -1,6 +1,6 @@
 ﻿import { Injectable }               from '@angular/core';
 import { Subject }                  from 'rxjs/subject';
-import { NotificationContainer }    from './containers/notification.container'
+import { NotificationContainer }    from '../containers/notification.container'
 
 @Injectable()
 export class NotificationService {

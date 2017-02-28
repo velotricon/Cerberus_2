@@ -1,10 +1,10 @@
 ﻿import { Component, OnInit }        from '@angular/core';
 import { Router }                   from '@angular/router';
-import { Person }                   from './person';
-import { PersonService }            from './person.service';
-import { LoggerService }            from './logger.service';
-import { NotificationService }      from './notification.service';
-import { AbstractComponent }        from './abstractions/abstract.component';
+import { Person }                   from '../person';
+import { PersonService }            from '../services/person.service';
+import { LoggerService }            from '../services/logger.service';
+import { NotificationService }      from '../services/notification.service';
+import { AbstractComponent }        from '../abstractions/abstract.component';
 
 @Component({
     selector: 'person-list',

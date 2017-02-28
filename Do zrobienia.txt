@@ -32,6 +32,11 @@
 	- Być może da się zrobić tak, żeby możliwe było przekazywanie dowolnej ilości serwisów. Np. serwisy jako argumenty typu nullable. Albo zmienna ilość argumentów wywołania (albo coś innego).
 	- Wywołanie metody, która AbstractComponent'u, która wymaga serwisu najpierw musiałoby sprawdzać, czy serwis nie jest nullem. Jeśli jest to wyjątek i komunikat "{service_name} service required".
 	
+9) Przenieść elementy do odpowiednich folderów:
+	- serwisy do folderu "services"
+	- komponenty do folderu "components"
+	(reszta niech zostanie tam gdzie jest)
+	
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

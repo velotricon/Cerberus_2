@@ -8,25 +8,25 @@ import { HttpModule, JsonpModule }  from '@angular/http';
 import { Routing }                  from './app.routing';
 
 //Components:
-import { HomeComponent }            from './home.component';
-import { AppComponent }             from './app.component';
-import { MenuComponent }            from './menu.component';
-import { TestComponent }            from './test.component';
-import { PersonViewComponent }      from './person.view.component';
-import { PersonListComponent }      from './person.list.component';
-import { BackButtonComponent }      from './back.button.component';
-import { PersonAddComponent }       from './person.add.component';
-import { RegisterComponent }        from './register.component';
-import { LoginComponent }           from './login.component';
-import { ProfileComponent }         from './profile.component';
-import { NotificationComponent }    from './notification.component';
+import { HomeComponent }            from './components/home.component';
+import { AppComponent }             from './components/app.component';
+import { MenuComponent }            from './components/menu.component';
+import { TestComponent }            from './components/test.component';
+import { PersonViewComponent }      from './components/person.view.component';
+import { PersonListComponent }      from './components/person.list.component';
+import { BackButtonComponent }      from './components/back.button.component';
+import { PersonAddComponent }       from './components/person.add.component';
+import { RegisterComponent }        from './components/register.component';
+import { LoginComponent }           from './components/login.component';
+import { ProfileComponent }         from './components/profile.component';
+import { NotificationComponent }    from './components/notification.component';
 
 //Services:
-import { MenuService }              from './menu.service';
-import { PersonService }            from './person.service';
-import { LoggerService }            from './logger.service';
-import { IdentityService }          from './identity.service';
-import { NotificationService }      from './notification.service';
+import { MenuService }              from './services/menu.service';
+import { PersonService }            from './services/person.service';
+import { LoggerService }            from './services/logger.service';
+import { IdentityService }          from './services/identity.service';
+import { NotificationService }      from './services/notification.service';
 
 @NgModule({
     imports: [
