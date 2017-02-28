@@ -1,4 +1,4 @@
-﻿import { MenuItem } from './menu.service'
+﻿import { MenuItem } from '../services/menu.service'
 
 export const MENU_ITEMS: MenuItem[] = [
     { Label: 'Home', Href: '/home' },
