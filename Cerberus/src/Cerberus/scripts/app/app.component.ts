@@ -2,7 +2,7 @@
 import { RouterModule }             from '@angular/router';
 import { ProfileComponent }         from './profile.component';
 import { NotificationComponent }    from './notification.component';
-
+import { NotificationService }      from './notification.service';
 import { NotificationContainer }    from './containers/notification.container';
 
 import './rxjs.operators';
@@ -13,6 +13,12 @@ import './rxjs.operators';
     templateUrl: './templates/app.html'
 })
 export class AppComponent {
+    constructor(private notification_service: NotificationService) {
+        this.notification_service.NotificationAnnounced.subscribe(notification => {
+            this.notificator.ShowNotification(notification);
+        });
+    }
+
     @ViewChild('profile') profile: ProfileComponent;
     @ViewChild('notificator') notificator: NotificationComponent;
 

@@ -1,13 +1,17 @@
 ﻿import { Output, EventEmitter }     from '@angular/core';
 import { LoggerService }            from '../logger.service';
+import { NotificationService }      from '../notification.service';
 import { NotificationContainer }    from '../containers/notification.container';
 
 export class AbstractComponent {
-    constructor(public ComponentName: string, protected logger: LoggerService) {
+    constructor(public ComponentName: string,
+        protected logger: LoggerService,
+        protected notification_service: NotificationService
+    ) {
         this.logger.Debug(this.ComponentName, 'Component creation...');
     }
 
-    @Output() OnNotification = new EventEmitter<NotificationContainer>();
+    //@Output() OnNotification = new EventEmitter<NotificationContainer>(); to do wywalenia
 
     //#region Logs
     protected LogDebug(Message: string): void {
@@ -25,7 +29,9 @@ export class AbstractComponent {
     //#endregion
 
     protected ShowNotification(Title: string, Content: string): void {
-        this.OnNotification.emit(new NotificationContainer(Title, Content));
+        //this.OnNotification.emit(new NotificationContainer(Title, Content));
+        this.notification_service.AnnounceNotification(new NotificationContainer(Title, Content));
     }
+
 
 }

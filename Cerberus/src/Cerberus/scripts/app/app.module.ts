@@ -54,7 +54,8 @@ import { NotificationService }      from './notification.service';
         MenuService,
         PersonService,
         LoggerService,
-        IdentityService
+        IdentityService,
+        NotificationService
     ]
 })
 export class AppModule { }

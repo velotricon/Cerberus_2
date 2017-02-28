@@ -1,5 +1,33 @@
 Do zrobienia:
-1) Zamykanie okienka
+1) Zamykanie okienka <<< zrobione
 2) Przyciski do potwierdzenia (OK, Tak, Nie, Anuluj).
+	 - Wydaje mi siê, ¿e powinny byæ dwa rodzaje powiadomieñ: [Ok / Anuluj] i [Tak / Nie].
+	 - Czyli tutaj musi jeszcze dodatkowo byæ jakaœ informacja zwrotna (co klikn¹³ u¿ytkownik). Ta informacja musi wracaæ do komponentu, który opublikowa³ powiadomienie.
+	 - Mo¿e traktowaæ to zupe³nie inaczej, czyli zrobiæ do tego osobny komponent? Np. ConfirmPopupComponent?
+3) Dodaæ coœ w rodzaju fade out'u;
 
-https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#bidirectional-service
+
+---------------------------------------------------------------------------------------------------------
+Rodzaje komunikatów:
+
+1) Notification
+	- Zamykanie okienka <<< zrobione
+	- Ró¿ne kolorki notyfikacji?
+	- Opcjonalny fade-out?
+	
+2) ConfirmPopup
+	- Dwa rodzaje powiadomieñ: [Ok / Anuluj] i [Tak / Nie]
+	- Musi jeszcze dodatkowo byæ jakaœ informacja zwrotna (co klikn¹³ u¿ytkownik)
+	- Musi blokowaæ resztê interfejsu u¿ytkownika.
+	
+3) StatusBar
+	- Pokazywanie / chowanie
+	- Ró¿ne typy [Success / Info / Error]
+	- Pokazywany gdzieœ w rogu ekranu, przemieszcza siê wraz ze scrollowaniem.
+	- Ograniczona iloœæ znaków.
+
+---------------------------------------------------------------------------------------------------------	
+Obs³uga b³êdów: Pokazywanie odpowiednich b³êdów u¿ytkownikowi, czyli trzeba dorobiæ w ogóle obs³ugê tych b³êdów.
+
+
+ 
