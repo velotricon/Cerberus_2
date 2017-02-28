@@ -2,8 +2,8 @@
 import { RouterModule }             from '@angular/router';
 import { ProfileComponent }         from './profile.component';
 import { NotificationComponent }    from './notification.component';
-import { NotificationService }      from './notification.service';
-import { NotificationContainer }    from './containers/notification.container';
+import { NotificationService }      from '../services/notification.service';
+import { NotificationContainer }    from '../containers/notification.container';
 
 import './rxjs.operators';
 

@@ -1,7 +1,7 @@
 ﻿import { Injectable }                                   from '@angular/core';
 import { Response, Http, Headers, RequestOptions }      from '@angular/http';
-import { Person }                                       from './person';
-import { PERSON_ARRAY }                                 from './person.mock';
+import { PersonContainer }                              from '../containers/person.container';
+import { PERSON_ARRAY }                                 from '../mockups/person.mock';
 import { Observable }                                   from 'rxjs/Observable';
 
 @Injectable()
@@ -9,11 +9,11 @@ export class PersonService {
     constructor(private http: Http) {
     }
 
-    GetPerson(PersonId: number): Promise<Person> {
+    GetPerson(PersonId: number): Promise<PersonContainer> {
         return Promise.resolve(PERSON_ARRAY.find(x => x.Id === PersonId));
     }
 
-    GetPersonArray(): Observable<Person[]> {
+    GetPersonArray(): Observable<PersonContainer[]> {
         return this.http.get('api/person').map(this.map_person_array).catch(this.handle_error);
     }
 

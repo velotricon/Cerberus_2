@@ -1,12 +1,12 @@
 ﻿import { ModuleWithProviders }      from '@angular/core';
 import { Routes, RouterModule }     from '@angular/router';
-import { TestComponent }            from './test.component';
-import { HomeComponent }            from './home.component';
-import { PersonViewComponent }      from './person.view.component';
-import { PersonListComponent }      from './person.list.component';
-import { PersonAddComponent }       from './person.add.component';
-import { RegisterComponent }        from './register.component';
-import { LoginComponent }           from './login.component';
+import { TestComponent }            from './components/test.component';
+import { HomeComponent }            from './components/home.component';
+import { PersonViewComponent }      from './components/person.view.component';
+import { PersonListComponent }      from './components/person.list.component';
+import { PersonAddComponent }       from './components/person.add.component';
+import { RegisterComponent }        from './components/register.component';
+import { LoginComponent }           from './components/login.component';
 
 const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', terminal: true, pathMatch: 'full' },

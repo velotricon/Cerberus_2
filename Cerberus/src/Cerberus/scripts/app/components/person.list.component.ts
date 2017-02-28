@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit }        from '@angular/core';
 import { Router }                   from '@angular/router';
-import { Person }                   from '../person';
+import { PersonContainer }          from '../containers/person.container';
 import { PersonService }            from '../services/person.service';
 import { LoggerService }            from '../services/logger.service';
 import { NotificationService }      from '../services/notification.service';
@@ -22,15 +22,15 @@ export class PersonListComponent extends AbstractComponent implements OnInit {
             notification_service);
     }
 
-    ModelPersonList: Person[];
+    ModelPersonList: PersonContainer[];
     ErrorMessage: string;
 
-    PersonSelected(SelectedPerson: Person): void {
+    PersonSelected(SelectedPerson: PersonContainer): void {
         let link = ['/person/', SelectedPerson.Id];
         this.router.navigate(link);
     }
 
-    private model_success(RequestResutlt: Person[]) {
+    private model_success(RequestResutlt: PersonContainer[]) {
         this.ModelPersonList = RequestResutlt;
     }
 
