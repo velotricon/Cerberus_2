@@ -1,0 +1,15 @@
+﻿<div class="confirm-popup" *ngIf="is_visible">
+    <div class="text">
+        {{text}}
+    </div>
+    <div class="buttons">
+        <div *ngIf="ShowOkAbortButtons">
+            <span>OK</span>
+            <span>Abort</span>
+        </div>
+        <div *ngIf="ShowYesNoButtons">
+            <span>Yes</span>
+            <span>No</span>
+        </div>
+    </div>
+</div>
