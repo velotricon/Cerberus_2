@@ -3,13 +3,13 @@
         {{text}}
     </div>
     <div class="buttons">
-        <div *ngIf="ShowOkAbortButtons">
-            <span>OK</span>
-            <span>Abort</span>
+        <div *ngIf="show_ok_abort_buttons">
+            <span (click)="ok_click()">OK</span>
+            <span (click)="abrot_click()">Abort</span>
         </div>
-        <div *ngIf="ShowYesNoButtons">
-            <span>Yes</span>
-            <span>No</span>
+        <div *ngIf="show_yes_no_buttons">
+            <span (click)="ok_click()">Yes</span>
+            <span (click)="abort_click()">No</span>
         </div>
     </div>
 </div>

@@ -11,8 +11,8 @@ export class ConfirmPopupComponent {
 
     private is_visible = false;
     private text: string;
-    private ShowOkAbortButtons = true;
-    private ShowYesNoButtons = false;
+    private show_ok_abort_buttons = true;
+    private show_yes_no_buttons = false;
 
     private ok_click(): void {
         this.is_visible = false;
@@ -22,13 +22,17 @@ export class ConfirmPopupComponent {
         this.is_visible = false;
         this.OnAbortClick.emit();
     }
-
-    public Show(Text: string) {
+    
+    public Show(Text: string, YesNoMode?: boolean): void {
+        if (YesNoMode == undefined) {
+            this.show_ok_abort_buttons = !YesNoMode;
+            this.show_yes_no_buttons = YesNoMode;
+        } else {
+            this.show_ok_abort_buttons = true;
+            this.show_yes_no_buttons = false;
+        }
         this.text = Text;
         this.is_visible = true;
-    }
-    public Show(Text: string, YesNoMode: boolean): void {
-
     }
 
 }
