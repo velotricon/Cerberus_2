@@ -6,8 +6,8 @@
 })
 export class ConfirmPopupComponent {
     
-    @Output('OnOkClick') OnOkClick = new EventEmitter();
-    @Output('OnAbortClick') OnAbortClick = new EventEmitter();
+    @Output('OkClick') OkClick = new EventEmitter();
+    @Output('AbortClick') AbortClick = new EventEmitter();
 
     private is_visible = false;
     private text: string;
@@ -16,15 +16,15 @@ export class ConfirmPopupComponent {
 
     private ok_click(): void {
         this.is_visible = false;
-        this.OnOkClick.emit();
+        this.OkClick.emit();
     }
     private abort_click(): void {
         this.is_visible = false;
-        this.OnAbortClick.emit();
+        this.AbortClick.emit();
     }
     
     public Show(Text: string, YesNoMode?: boolean): void {
-        if (YesNoMode == undefined) {
+        if (YesNoMode != undefined) {
             this.show_ok_abort_buttons = !YesNoMode;
             this.show_yes_no_buttons = YesNoMode;
         } else {

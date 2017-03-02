@@ -4,6 +4,7 @@
 <div (click)="OnClick_TestBtn()" class="button">
     test
 </div>
+<confirm-popup #popup (OkClick)="OnPopupOk()" (AbortClick)="OnPopupAbort()"></confirm-popup>
 <div class="app-content">
     <router-outlet></router-outlet>
 </div>

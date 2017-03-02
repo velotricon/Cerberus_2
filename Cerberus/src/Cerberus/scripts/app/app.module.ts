@@ -20,6 +20,8 @@ import { RegisterComponent }        from './components/register.component';
 import { LoginComponent }           from './components/login.component';
 import { ProfileComponent }         from './components/profile.component';
 import { NotificationComponent }    from './components/notification.component';
+import { ConfirmPopupComponent }    from './components/confirm.popup.component';
+import { ButtonCtrlComponent }      from './components/button.ctrl.component';
 
 //Services:
 import { MenuService }              from './services/menu.service';
@@ -47,7 +49,9 @@ import { NotificationService }      from './services/notification.service';
         RegisterComponent,
         LoginComponent,
         ProfileComponent,
-        NotificationComponent
+        NotificationComponent,
+        ConfirmPopupComponent,
+        ButtonCtrlComponent
     ],
     bootstrap: [AppComponent],
     providers: [

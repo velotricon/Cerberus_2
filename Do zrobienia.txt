@@ -37,6 +37,16 @@
 	- komponenty do folderu "components"
 	(reszta niech zostanie tam gdzie jest)
 	
+10) Kontrolki:
+	- Przycisk
+	- Labelka
+	- Text-box (numeric itp.)
+	- Kalendarz
+	- Czas
+	- Combo-box
+	
+11) Style, kolorystyka itp. Trzeba by się zastanowić nad sensowną kolorystyką.	
+	
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

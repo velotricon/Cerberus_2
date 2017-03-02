@@ -1,15 +1,19 @@
 ﻿<div class="confirm-popup" *ngIf="is_visible">
-    <div class="text">
-        {{text}}
-    </div>
-    <div class="buttons">
-        <div *ngIf="show_ok_abort_buttons">
-            <span (click)="ok_click()">OK</span>
-            <span (click)="abrot_click()">Abort</span>
+    <div class="popup-content">
+        <div class="text">
+            {{text}}
         </div>
-        <div *ngIf="show_yes_no_buttons">
-            <span (click)="ok_click()">Yes</span>
-            <span (click)="abort_click()">No</span>
+        <div class="buttons">
+            <div *ngIf="show_ok_abort_buttons">
+                <!--<span (click)="ok_click()">OK</span>-->
+                <button-ctrl [text]="'ok'" (click)="ok_click()"></button-ctrl>
+                <!--<span (click)="abort_click()">Abort</span>-->
+                <button-ctrl [text]="'abort'" (click)="abort_click()"></button-ctrl>
+            </div>
+            <div *ngIf="show_yes_no_buttons">
+                <span (click)="ok_click()">Yes</span>
+                <span (click)="abort_click()">No</span>
+            </div>
         </div>
     </div>
 </div>
