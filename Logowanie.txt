@@ -5,3 +5,9 @@ Czyli trzeba:
 3) Ustawienia konta (to zupełnie na później)
 	- Możliwość usunięcia konta?
 	- Co tu jeszcze dodać?
+4) Możliwość dodania avatara
+	- upload plików na serwer: JAK TO SIĘ ROBI?
+	- avatar zapisywaniy w jakimś konkretnym folderze
+	- określić jakoś rozmiar avatara
+5) Wyświetlanie avatara
+	- <img src="...

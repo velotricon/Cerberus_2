@@ -1,9 +1,9 @@
 ﻿<div class="profile">
-    <div class="avatar"></div>
-    <div class="username"></div>
+    <div class="avatar" *ngIf="logged_in"></div>
+    <div class="username" *ngIf="logged_in">{{username}}</div>
     <div class="buttons">
-        <span class="login-link">Login</span>
-        <span class="register-link">Register</span>
-        <span class="logout-link">Logout</span>
+        <span class="login-link" *ngIf="!logged_in" (click)="login_click()">Login</span>
+        <span class="register-link" *ngIf="!logged_in" (click)="register_click()">Register</span>
+        <span class="logout-link" *ngIf="logged_in" (click)="logout_click()">Logout</span>
     </div>
 </div>

@@ -1,17 +1,21 @@
-﻿body {
+﻿:root {
+    --crb-gold: rgb(254, 210, 0);
+}
+
+body {
     font-family: Calibri, Verdana;
     background-color: rgb(77, 77, 77);
     margin: 0px;
 }
 
 div.app-main-section {
-    display: flex;       
+    display: flex;     
+    margin: 2px;  
 }
 
 div.top-panel {
     padding: 20px 8px 20px 8px;
     background-color: white;
-    width: 98%;
     margin: 2px;
 }
 
@@ -24,12 +28,36 @@ menu {
     padding: 20px 8px 20px 8px;
     min-width: 150px;
     width: 18%;
-    display:inline-block;
+    display: inline-block;
     background-color: white;
     list-style-type: none;
     min-height: 300px;
-    margin: 2px;
+    margin-right: 1px;
 }
+
+.menu-item {
+    /*height: 38px;*/
+    background-color: rgb(100, 100, 100);
+}
+
+    .menu-item:hover {
+        background-color: white;
+    }
+
+    .menu-item a {
+        color: white;
+        text-decoration: none;
+        font-size: xx-large;
+        display: block;
+        padding: 2px 20px 2px 20px;
+        border-bottom: 2px solid rgb(100, 100, 100);
+    }
+
+        .menu-item a:hover {
+            color: rgb(100, 100, 100);
+            border-bottom: 2px solid var(--crb-gold);
+        }
+
 
 div.app-content {
     padding: 20px 8px 20px 8px;
@@ -37,7 +65,7 @@ div.app-content {
     background-color: white;
     min-height: 300px;
     width: 84%;
-    margin: 2px;
+    margin-left: 1px;
 }
 
 table.light-grid tr.clickable {

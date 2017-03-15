@@ -33,7 +33,7 @@ namespace Cerberus.Controllers
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("GetAccountInfo")]
         public IActionResult GetAccountInfo()
         {
             GenericResultContainer profile_result = new GenericResultContainer();
@@ -63,11 +63,18 @@ namespace Cerberus.Controllers
             try
             {
                 await this.HttpContext.Authentication.SignOutAsync("Cookies");
-                return Ok();
+                return new ObjectResult(new GenericResultContainer()
+                {
+                    Succeeded = true
+                });
             }
             catch(Exception ex)
             {
-                return BadRequest();
+                return new ObjectResult(new GenericResultContainer()
+                {
+                    Succeeded = false,
+                    Message = ex.Message
+                });
             }
         }
         
