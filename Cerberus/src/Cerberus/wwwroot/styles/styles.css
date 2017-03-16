@@ -58,6 +58,14 @@ menu {
             border-bottom: 2px solid var(--crb-gold);
         }
 
+div.profile div.buttons {
+    font-weight: bolder;
+}
+
+    div.profile div.buttons span {
+        padding: 5px 25px 5px 25px;
+        cursor: pointer;
+    }
 
 div.app-content {
     padding: 20px 8px 20px 8px;

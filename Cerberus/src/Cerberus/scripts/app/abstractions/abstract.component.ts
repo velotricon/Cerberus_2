@@ -8,23 +8,31 @@ export class AbstractComponent {
         protected logger: LoggerService,
         protected notification_service: NotificationService
     ) {
-        this.logger.Debug(this.ComponentName, 'Component creation...');
+        this.LogDebug('Component creation...');
     }
 
     //@Output() OnNotification = new EventEmitter<NotificationContainer>(); to do wywalenia
 
     //#region Logs
     protected LogDebug(Message: string): void {
-        this.logger.Debug(this.ComponentName, Message);
+        if (this.logger != null) {
+            this.logger.Debug(this.ComponentName, Message);
+        }
     }
     protected LogInfo(Message: string): void {
-        this.logger.Info(this.ComponentName, Message);
+        if (this.logger != null) {
+            this.logger.Info(this.ComponentName, Message);
+        }
     }
     protected LogLog(Message: string): void {
-        this.logger.Log(this.ComponentName, Message);
+        if (this.logger != null) {
+            this.logger.Log(this.ComponentName, Message);
+        }
     }
     protected LogError(Message: string): void {
-        this.logger.Error(this.ComponentName, Message);
+        if (this.logger != null) {
+            this.logger.Error(this.ComponentName, Message);
+        }
     }
     //#endregion
 

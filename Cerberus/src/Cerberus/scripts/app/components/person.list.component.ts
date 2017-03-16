@@ -18,7 +18,7 @@ export class PersonListComponent extends AbstractComponent implements OnInit {
         notification_service: NotificationService
     ) {
         super('PersonListComponent',
-            logger,
+            null,
             notification_service);
     }
 
