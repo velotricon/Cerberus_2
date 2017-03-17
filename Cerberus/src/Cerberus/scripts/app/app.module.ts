@@ -29,6 +29,7 @@ import { PersonService }            from './services/person.service';
 import { LoggerService }            from './services/logger.service';
 import { IdentityService }          from './services/identity.service';
 import { NotificationService }      from './services/notification.service';
+import { RootCommunicationService } from './services/root.communication.service';
 
 @NgModule({
     imports: [
@@ -59,7 +60,8 @@ import { NotificationService }      from './services/notification.service';
         PersonService,
         LoggerService,
         IdentityService,
-        NotificationService
+        NotificationService,
+        RootCommunicationService
     ]
 })
 export class AppModule { }

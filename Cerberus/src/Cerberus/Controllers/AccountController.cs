@@ -39,10 +39,19 @@ namespace Cerberus.Controllers
             GenericResultContainer profile_result = new GenericResultContainer();
             try
             {
+                //var id = this.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier);
+                Claim name_claim = this.User.Claims.First(x => x.Type == ClaimTypes.Name);
+                //Można by to kiedyś opakować jakoś ładnie...
+                ProfileViewModel profile_info = new ProfileViewModel()
+                {
+                    Username = name_claim.Value
+                };
+
                 profile_result = new GenericResultContainer()
                 {
                     Succeeded = false,
-                    Message = "Test"
+                    Message = null,
+                    Result = profile_info
                 };
             }
             catch(Exception ex)
@@ -87,7 +96,7 @@ namespace Cerberus.Controllers
             try
             {
                 MembershipContext user_context = this.membership_service.ValidateUser(User.Username, User.Password);
-
+                
                 if(user_context.User != null)
                 {
                     List<Claim> claims = new List<Claim>();
@@ -96,7 +105,10 @@ namespace Cerberus.Controllers
                     {
                         claims.Add(new Claim(ClaimTypes.Role, role.ROLE_NAME, ClaimValueTypes.String, User.Username));
                     }
+                    claims.Add(new Claim(ClaimTypes.Name, user_context.User.LOGIN, ClaimValueTypes.String));
+                    claims.Add(new Claim(ClaimTypes.NameIdentifier, user_context.User.ID.ToString(), ClaimValueTypes.Integer32));
 
+                    
                     await HttpContext.Authentication.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme)),
                         new AuthenticationProperties { IsPersistent = User.RememberMe });

@@ -2,6 +2,7 @@
 import { Router }                                       from '@angular/router';
 import { IdentityService }                              from '../services/identity.service';
 import { StatusContainer }                              from '../containers/status.container';
+import { GenericResultContainer }                       from '../containers/generic.result.container';
 
 @Component({
     selector: 'profile',
@@ -14,9 +15,10 @@ export class ProfileComponent implements OnInit {
     @Output() StatusPublisher = new EventEmitter<StatusContainer>();
 
     private logged_in: boolean = false;
+    private username: string;
 
-    private model_success(RequestResutlt: Object) {
-        //alert('1');
+    private model_success(RequestResutlt: GenericResultContainer) {
+        this.username = RequestResutlt.Result.Username;
         this.logged_in = true;
     }
 
@@ -25,7 +27,7 @@ export class ProfileComponent implements OnInit {
         this.logged_in = false;
     }
 
-    private logout_success(RequestResult: Object) {
+    private logout_success(RequestResult: any) {
         this.logged_in = false;
     }
 
@@ -37,30 +39,33 @@ export class ProfileComponent implements OnInit {
         alert('Hello world!');
     }
 
-    public login_click(): void {
+    private login_click(): void {
         this.router.navigateByUrl('/login');
     }
 
-    public register_click(): void {
+    private register_click(): void {
         alert('register not implemented yet');
     }
 
-    public logout_click(): void {
+    private logout_click(): void {
         this.service.Logout().subscribe(
             result => this.logout_success(result),
             error => this.logout_error(error)
         );
     }
 
-    ngOnInit(): void {
+    public RefreshProfileInfo(): void {
         this.service.GetUserInfo().subscribe(
             result => this.model_success(result),
             error => this.model_error(error)
         );
+    }
 
-        let status = new StatusContainer();
-        status.StatusText = 'Test raz dwa trzy';
-        this.StatusPublisher.emit(status);
-            
+    ngOnInit(): void {
+        this.RefreshProfileInfo();
+
+        //let status = new StatusContainer();
+        //status.StatusText = 'Test raz dwa trzy';
+        //this.StatusPublisher.emit(status);  
     }
 };

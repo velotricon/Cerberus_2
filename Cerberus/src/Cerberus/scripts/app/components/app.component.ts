@@ -6,6 +6,8 @@ import { NotificationComponent }    from './notification.component';
 import { ConfirmPopupComponent }    from './confirm.popup.component';
 
 import { NotificationService }      from '../services/notification.service';
+import { RootCommunicationService } from '../services/root.communication.service';
+
 import { NotificationContainer }    from '../containers/notification.container';
 
 
@@ -17,9 +19,15 @@ import '../rxjs.operators';
     templateUrl: './templates/app.html'
 })
 export class AppComponent {
-    constructor(private notification_service: NotificationService) {
+    constructor(private notification_service: NotificationService,
+        private root_communication_service: RootCommunicationService
+    ) {
         this.notification_service.NotificationAnnounced.subscribe(notification => {
             this.notificator.ShowNotification(notification);
+        });
+
+        this.root_communication_service.StringMessageAnnounced.subscribe(message => {
+            this.on_string_message_anounced(message);
         });
     }
 
@@ -43,5 +51,13 @@ export class AppComponent {
     }
     OnPopupAbort(): void {
         alert('popop ABORT');
+    }
+
+    private on_string_message_anounced(Msg: string): void {
+        switch (Msg) {
+            case 'refresh profile':
+                this.profile.RefreshProfileInfo();
+                break;
+        }
     }
 }

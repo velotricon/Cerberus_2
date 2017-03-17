@@ -2,6 +2,6 @@
     constructor(
         public Succeded: boolean,
         public Message: string,
-        public Result: Object
+        public Result: any
     ) { };
 }
