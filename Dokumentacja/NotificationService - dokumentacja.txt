@@ -1,0 +1,4 @@
+NotificationService - dokumentacja
+
+1) Serwis służy do wyświetlania komunikatów dla użytkownika. Komunikaty wyświetlane są przy pomocy komponentu "notificator: NotificationComponent" osadzonego w "AppComponent".
+1) Zaleca się używanie metody "ShowNotification". W przypadku konieczności dodania jakiegoś argumentu należy przeciążyć metodę tak, aby nie wystąpiła konieczność przerabiania wywołań metody w całym projekcie.
