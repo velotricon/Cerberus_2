@@ -7,6 +7,7 @@ import { ConfirmPopupComponent }    from './confirm.popup.component';
 
 import { NotificationService }      from '../services/notification.service';
 import { RootCommunicationService } from '../services/root.communication.service';
+import { LoggerService }            from '../services/logger.service';
 
 import { NotificationContainer }    from '../containers/notification.container';
 
@@ -20,15 +21,20 @@ import '../rxjs.operators';
 })
 export class AppComponent {
     constructor(private notification_service: NotificationService,
-        private root_communication_service: RootCommunicationService
+        private root_communication_service: RootCommunicationService,
+        private logger: LoggerService
     ) {
+
+        //Subscrptions
         this.notification_service.NotificationAnnounced.subscribe(notification => {
             this.notificator.ShowNotification(notification);
         });
-
         this.root_communication_service.StringMessageAnnounced.subscribe(message => {
             this.on_string_message_anounced(message);
         });
+        //end-of-Subscriptions
+
+        this.logger.Debug("Test", "Constructor", "AppComponent"); 
     }
 
     @ViewChild('profile') profile: ProfileComponent;
@@ -43,7 +49,7 @@ export class AppComponent {
         //this.notificator.ShowNotification(new NotificationContainer("Test title Test title Test title ",
         //    "bvsijsdklf asdadsadkkkeeek asdsdk eks sdmakorjeiraf dsde bvsijsdklf asdadsadkkkeeek asdsdk eks sdmakorjeiraf dsde bvsijsdklf asdadsadkkkeeek asdsdk eks sdmakorjeiraf dsde"
         //));
-        this.popup.Show("Are you sure?", false);
+        this.logger.Debug("OnClick_TestBtn", "Test");
     }   
 
     OnPopupOk(): void {

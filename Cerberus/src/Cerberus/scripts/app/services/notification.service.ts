@@ -14,5 +14,10 @@ export class NotificationService {
     public AnnounceNotification(Notif: NotificationContainer) {
         this.notification_announced_source.next(Notif);
     }
+    public ShowNotification(Title: string, Content: string): void {
+        let notification_container = new NotificationContainer(Title, Content);
+        this.AnnounceNotification(notification_container);
+    }
+
 }
 

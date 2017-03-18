@@ -10,16 +10,14 @@ import { AbstractComponent }        from '../abstractions/abstract.component';
     selector: 'person-list',
     templateUrl: './templates/person.list.html'
 })
-export class PersonListComponent extends AbstractComponent implements OnInit {
+export class PersonListComponent implements OnInit {
     constructor(
         private service: PersonService,
         private router: Router,
-        logger: LoggerService,
-        notification_service: NotificationService
+        private logger: LoggerService,
+        private notification_service: NotificationService
     ) {
-        super('PersonListComponent',
-            null,
-            notification_service);
+        this.logger.Debug("test", "Constructor", "PersonListComponent");
     }
 
     ModelPersonList: PersonContainer[];
@@ -43,5 +41,7 @@ export class PersonListComponent extends AbstractComponent implements OnInit {
             result => this.model_success(result),
             error => this.model_error(error)
         );
+
+        this.logger.Debug("ngOnInit", "Test");
     }
 }
