@@ -123,3 +123,24 @@ div.confirm-popup {
         position: relative;
         transition: all 5s ease-in-out;
     }
+
+div.row {
+    padding: 3px 10px 3px 10px;
+}
+
+    div.row label {
+        display: inline-block;
+        width: 120px;
+        text-align: right;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    div.row input {
+        display: inline-block;
+        width: 150px;
+    }
+
+    div.row div.buttons {
+        margin-left: 144px;
+    }
