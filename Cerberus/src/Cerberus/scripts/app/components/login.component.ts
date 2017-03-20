@@ -1,6 +1,5 @@
 ﻿import { Component }                    from '@angular/core'
 import { Router }                       from '@angular/router';
-import { AbstractComponent }            from '../abstractions/abstract.component';
 import { IdentityService }              from '../services/identity.service'
 import { RootCommunicationService }     from '../services/root.communication.service';
 import { GenericResultContainer }       from '../containers/generic.result.container';

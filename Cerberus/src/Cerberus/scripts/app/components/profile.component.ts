@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit, EventEmitter, Output }      from '@angular/core';
 import { Router }                                       from '@angular/router';
 import { IdentityService }                              from '../services/identity.service';
+import { NotificationService }                          from '../services/notification.service';
 import { StatusContainer }                              from '../containers/status.container';
 import { GenericResultContainer }                       from '../containers/generic.result.container';
 
@@ -52,6 +53,10 @@ export class ProfileComponent implements OnInit {
             result => this.logout_success(result),
             error => this.logout_error(error)
         );
+    }
+
+    private profile_info_click(): void {
+        this.router.navigateByUrl('/profile/settings');
     }
 
     public RefreshProfileInfo(): void {

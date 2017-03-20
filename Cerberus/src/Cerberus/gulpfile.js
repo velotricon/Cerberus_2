@@ -21,6 +21,8 @@ gulp.task("scriptsNStyles", () => {
             '@angular/**',
             'jquery/dist/jquery.*js',
             'bootstrap/dist/js/bootstrap.*js',
+            'ng2-file-upload/**',
+            'ng2-file-upload/ng2-file-upload/**'
     ], {
         cwd: "node_modules/**"
     })

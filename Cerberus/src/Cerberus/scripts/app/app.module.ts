@@ -7,6 +7,8 @@ import { HttpModule, JsonpModule }  from '@angular/http';
 
 import { Routing }                  from './app.routing';
 
+import { FileUploadModule, FileUploader, Headers, FileDropDirective, FileSelectDirective}     from 'ng2-file-upload/ng2-file-upload';
+
 //Components:
 import { HomeComponent }            from './components/home.component';
 import { AppComponent }             from './components/app.component';
@@ -19,6 +21,7 @@ import { PersonAddComponent }       from './components/person.add.component';
 import { RegisterComponent }        from './components/register.component';
 import { LoginComponent }           from './components/login.component';
 import { ProfileComponent }         from './components/profile.component';
+import { ProfileSettingsComponent } from './components/profile.settings.component';
 import { NotificationComponent }    from './components/notification.component';
 import { ConfirmPopupComponent }    from './components/confirm.popup.component';
 import { ButtonCtrlComponent }      from './components/button.ctrl.component';
@@ -36,6 +39,7 @@ import { RootCommunicationService } from './services/root.communication.service'
         BrowserModule,
         FormsModule,
         HttpModule,
+        FileUploadModule,
         Routing
     ],
     declarations: [
@@ -52,7 +56,8 @@ import { RootCommunicationService } from './services/root.communication.service'
         ProfileComponent,
         NotificationComponent,
         ConfirmPopupComponent,
-        ButtonCtrlComponent
+        ButtonCtrlComponent,
+        ProfileSettingsComponent
     ],
     bootstrap: [AppComponent],
     providers: [

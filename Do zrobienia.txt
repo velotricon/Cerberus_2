@@ -30,12 +30,15 @@
 		
 8) Czy da się zrobić tak, żeby komponent dziedziczący po AbstractComponent nie musiał przekazywać wszystkich serviców w konstruktorze?
 	- Być może da się zrobić tak, żeby możliwe było przekazywanie dowolnej ilości serwisów. Np. serwisy jako argumenty typu nullable. Albo zmienna ilość argumentów wywołania (albo coś innego).
+		<<< Wygląda na to, że coś takiego nie jest wykonalne w typescriptcie
 	- Wywołanie metody, która AbstractComponent'u, która wymaga serwisu najpierw musiałoby sprawdzać, czy serwis nie jest nullem. Jeśli jest to wyjątek i komunikat "{service_name} service required".
+		<<< zdecydowałem nie wykorzystywać AbstractComponent'u do obsługi serwisów
 	
 9) Przenieść elementy do odpowiednich folderów:
-	- serwisy do folderu "services"
-	- komponenty do folderu "components"
+	- serwisy do folderu "services" <<< zrobione
+	- komponenty do folderu "components" <<< zrobione
 	(reszta niech zostanie tam gdzie jest)
+	<<< zrobione
 	
 10) Kontrolki:
 	- Przycisk
@@ -48,9 +51,11 @@
 11) Style, kolorystyka itp. Trzeba by się zastanowić nad sensowną kolorystyką.	
 
 12) Odpowiedzi z serwera
-	- Jakiś parser do odpowiedzi?
-	- Uniwersalny obiekt do odpowiedzi?
-	- Jakiś standard odpowiedzi?
+	- Jakiś parser do odpowiedzi? <<< zrobione (AbstractApiService)
+	- Uniwersalny obiekt do odpowiedzi? <<< zrobione (GenericResultContainer)
+	- Jakiś standard odpowiedzi? <<< zrobione (GenericResultContainer)
+	
+13) Jakiś util dostarczający informacji o zalogowanym użytkowniku (code behind).	
 	
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

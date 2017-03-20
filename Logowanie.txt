@@ -1,13 +1,20 @@
 Samo logowanie jest niby gotowe ale trzeba to obsłużyć jakoś od strony skryptów.
 Czyli trzeba:
 1) Dodać możliwość wylogowania
+	<<< zrobione
 2) Pokać jako kto jestem zalogowany
+	<<< zrobione
+	
 3) Ustawienia konta (to zupełnie na później)
 	- Możliwość usunięcia konta?
+	- Dodać avatar
+	- Zmiana hasła
 	- Co tu jeszcze dodać?
+	
 4) Możliwość dodania avatara
 	- upload plików na serwer: JAK TO SIĘ ROBI?
 	- avatar zapisywaniy w jakimś konkretnym folderze
 	- określić jakoś rozmiar avatara
+	
 5) Wyświetlanie avatara
 	- <img src="...

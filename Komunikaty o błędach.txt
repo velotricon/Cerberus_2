@@ -1,9 +1,11 @@
 Do zrobienia:
 1) Zamykanie okienka <<< zrobione
 2) Przyciski do potwierdzenia (OK, Tak, Nie, Anuluj).
-	 - Wydaje mi siê, ¿e powinny byæ dwa rodzaje powiadomieñ: [Ok / Anuluj] i [Tak / Nie].
-	 - Czyli tutaj musi jeszcze dodatkowo byæ jakaœ informacja zwrotna (co klikn¹³ u¿ytkownik). Ta informacja musi wracaæ do komponentu, który opublikowa³ powiadomienie.
-	 - Mo¿e traktowaæ to zupe³nie inaczej, czyli zrobiæ do tego osobny komponent? Np. ConfirmPopupComponent?
+	 - Wydaje mi siê, ¿e powinny byæ dwa rodzaje powiadomieñ: [Ok / Anuluj] i [Tak / Nie]. <<< zrobione
+	 - Czyli tutaj musi jeszcze dodatkowo byæ jakaœ informacja zwrotna (co klikn¹³ u¿ytkownik). Ta informacja musi wracaæ do komponentu, który opublikowa³ powiadomienie. <<< zrobione
+	 - Mo¿e traktowaæ to zupe³nie inaczej, czyli zrobiæ do tego osobny komponent? Np. ConfirmPopupComponent? <<< zrobione
+	 <<< zrobione
+	 
 3) Dodaæ coœ w rodzaju fade out'u;
 
 
@@ -16,8 +18,8 @@ Rodzaje komunikatów:
 	- Opcjonalny fade-out?
 	
 2) ConfirmPopup
-	- Dwa rodzaje powiadomieñ: [Ok / Anuluj] i [Tak / Nie]
-	- Musi jeszcze dodatkowo byæ jakaœ informacja zwrotna (co klikn¹³ u¿ytkownik)
+	- Dwa rodzaje powiadomieñ: [Ok / Anuluj] i [Tak / Nie] <<< zrobione
+	- Musi jeszcze dodatkowo byæ jakaœ informacja zwrotna (co klikn¹³ u¿ytkownik) <<< zrobione
 	- Musi blokowaæ resztê interfejsu u¿ytkownika.
 	
 3) StatusBar

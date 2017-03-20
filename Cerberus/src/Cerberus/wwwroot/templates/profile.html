@@ -1,6 +1,8 @@
 ﻿<div class="profile">
-    <div class="avatar" *ngIf="logged_in"></div>
-    <div class="username" *ngIf="logged_in">{{username}}</div>
+    <div class="profile-info" *ngIf="logged_in" (click)="profile_info_click()">
+        <div class="avatar"></div>
+        <div class="username">{{username}}</div>
+    </div>
     <div class="buttons">
         <span class="login-link" *ngIf="!logged_in" (click)="login_click()">Login</span>
         <span class="register-link" *ngIf="!logged_in" (click)="register_click()">Register</span>
