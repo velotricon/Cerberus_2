@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -168,6 +169,14 @@ namespace Cerberus.Controllers
                 result_container.Message = ex.Message;
             }
 
+            return new ObjectResult(result_container);
+        }
+
+        [Route("avatar")]
+        [HttpPost]
+        public IActionResult UploadAvatar([FromBody] IFormFile File)
+        {
+            GenericResultContainer result_container = new GenericResultContainer();
             return new ObjectResult(result_container);
         }
     }

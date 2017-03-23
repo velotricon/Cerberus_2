@@ -7,7 +7,7 @@ import { HttpModule, JsonpModule }  from '@angular/http';
 
 import { Routing }                  from './app.routing';
 
-import { FileUploadModule, FileUploader, Headers, FileDropDirective, FileSelectDirective}     from 'ng2-file-upload/ng2-file-upload';
+import { FileUploadModule, FileUploader, Headers, FileDropDirective, FileSelectDirective }     from 'ng2-file-upload/ng2-file-upload';
 
 //Components:
 import { HomeComponent }            from './components/home.component';

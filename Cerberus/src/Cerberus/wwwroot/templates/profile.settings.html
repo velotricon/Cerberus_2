@@ -1,3 +1,12 @@
 ﻿<div class="profile-settings">
-    
+    <!--<div style="width: 400px; height: 200px;" 
+        ng2FileDrop
+        [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+        (fileOver)="fileOverBase($event)"
+        [uploader]="uploader"
+        class="well my-drop-zone">
+        Base drop zone
+    </div>-->
+    <input type="file" ng2FileSelect [uploader]="uploader" />
+    <button (click)="upload_file()">Wyślij</button>
 </div>

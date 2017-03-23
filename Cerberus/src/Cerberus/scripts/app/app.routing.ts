@@ -10,7 +10,7 @@ import { LoginComponent }           from './components/login.component';
 import { ProfileSettingsComponent } from './components/profile.settings.component';
 
 const AppRoutes: Routes = [
-    { path: '', redirectTo: 'home', terminal: true, pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'test', component: TestComponent },
