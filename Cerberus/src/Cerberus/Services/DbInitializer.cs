@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cerberus.Models;
 using Cerberus.Managers;
-using Cerberus.Interfaces;
+using Cerberus.Interfaces.ServiceInterfaces;
 
 namespace Cerberus.Services
 {

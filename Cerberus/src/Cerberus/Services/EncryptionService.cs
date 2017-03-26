@@ -1,4 +1,4 @@
-﻿using Cerberus.Interfaces;
+﻿using Cerberus.Interfaces.ServiceInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

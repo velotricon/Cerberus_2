@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cerberus.Models;
 
-namespace Cerberus.Interfaces
+namespace Cerberus.Interfaces.ServiceInterfaces
 {
     public interface IMembershipService
     {

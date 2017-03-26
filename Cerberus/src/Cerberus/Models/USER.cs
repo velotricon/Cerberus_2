@@ -20,9 +20,9 @@ namespace Cerberus.Models
         public string SALT { get; set; }
         public DateTime CREATE_DATE { get; set; }
 
-        //public int ROLE_ID { get; set; }
-        //
-        //[ForeignKey("ROLE_ID")]
-        //public ROLE ROLE { get; set; }
+        public int? AVATAR_ID { get; set; }
+        
+        [ForeignKey("AVATAR_ID")]
+        public FILE AVATAR { get; set; }
     }
 }

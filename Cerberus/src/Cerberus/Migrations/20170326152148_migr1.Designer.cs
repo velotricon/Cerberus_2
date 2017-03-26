@@ -8,9 +8,10 @@ using Cerberus.Models;
 namespace Cerberus.Migrations
 {
     [DbContext(typeof(MainContext))]
-    partial class MainContextModelSnapshot : ModelSnapshot
+    [Migration("20170326152148_migr1")]
+    partial class migr1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -92,26 +93,6 @@ namespace Cerberus.Migrations
                     b.ToTable("EMPLOYEES");
                 });
 
-            modelBuilder.Entity("Cerberus.Models.FILE", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CONTENT_TYPE");
-
-                    b.Property<string>("FULL_NAME");
-
-                    b.Property<bool>("IS_ACTIVE");
-
-                    b.Property<string>("NAME");
-
-                    b.Property<string>("PATH");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("FILE");
-                });
-
             modelBuilder.Entity("Cerberus.Models.PERMISSION", b =>
                 {
                     b.Property<int>("ID")
@@ -181,8 +162,6 @@ namespace Cerberus.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AVATAR_ID");
-
                     b.Property<DateTime>("CREATE_DATE");
 
                     b.Property<string>("EMAIL");
@@ -196,8 +175,6 @@ namespace Cerberus.Migrations
                     b.Property<string>("SALT");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("AVATAR_ID");
 
                     b.ToTable("USERS");
                 });
@@ -257,13 +234,6 @@ namespace Cerberus.Migrations
                     b.HasOne("Cerberus.Models.ROLE", "ROLE")
                         .WithMany()
                         .HasForeignKey("ROLE_ID");
-                });
-
-            modelBuilder.Entity("Cerberus.Models.USER", b =>
-                {
-                    b.HasOne("Cerberus.Models.FILE", "AVATAR")
-                        .WithMany()
-                        .HasForeignKey("AVATAR_ID");
                 });
 
             modelBuilder.Entity("Cerberus.Models.USER_ROLE", b =>

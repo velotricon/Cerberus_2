@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Cerberus.AbstractClasses;
 using Cerberus.Models;
-using Cerberus.Interfaces;
+using Cerberus.Interfaces.ServiceInterfaces;
 using Cerberus.Interfaces.ManagerInterfaces;
 using Cerberus.Containers;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -13,6 +13,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Cerberus.Utils;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,14 +22,17 @@ namespace Cerberus.Controllers
     [Route("api/[controller]")]
     public class AccountController : AbstractController
     {
-        private IMembershipService membership_service;
-        private IUserManager user_manager;
-        private IRoleManager role_manager;
+        private readonly IMembershipService membership_service;
+        private readonly IFileRepositoryService file_repository_service;
+        private readonly IUserManager user_manager;
+        private readonly IRoleManager role_manager;
 
-        public AccountController(MainContext Context, IMembershipService MembershipService, 
+        public AccountController(MainContext Context, 
+            IMembershipService MembershipService, IFileRepositoryService FileRepositoryService,
             IUserManager UserManager, IRoleManager RoleManager) : base(Context)
         {
             this.membership_service = MembershipService;
+            this.file_repository_service = FileRepositoryService;
             this.user_manager = UserManager;
             this.role_manager = RoleManager;
         }
@@ -40,12 +44,10 @@ namespace Cerberus.Controllers
             GenericResultContainer profile_result = new GenericResultContainer();
             try
             {
-                //var id = this.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier);
-                Claim name_claim = this.User.Claims.First(x => x.Type == ClaimTypes.Name);
-                //Można by to kiedyś opakować jakoś ładnie...
+                UserUtil user_util = new UserUtil(this.HttpContext);
                 ProfileViewModel profile_info = new ProfileViewModel()
                 {
-                    Username = name_claim.Value
+                    Username = user_util.GetCurrentUserName()
                 };
 
                 profile_result = new GenericResultContainer()
@@ -174,9 +176,15 @@ namespace Cerberus.Controllers
 
         [Route("avatar")]
         [HttpPost]
-        public IActionResult UploadAvatar([FromBody] IFormFile File)
+        public IActionResult UploadAvatar()
         {
             GenericResultContainer result_container = new GenericResultContainer();
+
+            IFormFile file = Request.Form.Files.First();
+            UserUtil user_util = new UserUtil(this.HttpContext);
+            int user_id = user_util.GetCurrentUserId();
+            this.file_repository_service.AddUserAvatar(file, user_id);
+
             return new ObjectResult(result_container);
         }
     }

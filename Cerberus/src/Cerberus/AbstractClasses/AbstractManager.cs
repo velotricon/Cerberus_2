@@ -103,7 +103,8 @@ namespace Cerberus.AbstractClasses
 
         public T Get(int Id)
         {
-            throw new NotImplementedException();
+            T entity = this.context.Set<T>().Where(x => x.ID == Id && x.IS_ACTIVE == true).First();
+            return entity;
         }
 
         public virtual void Add(T Entity)

@@ -11,9 +11,11 @@ using Newtonsoft.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Cerberus.Interfaces;
 using Cerberus.Interfaces.ManagerInterfaces;
+using Cerberus.Interfaces.ServiceInterfaces;
 using Cerberus.Models;
 using Cerberus.Managers;
 using Cerberus.Services;
+using Cerberus.Utils;
 
 namespace Cerberus
 {
@@ -41,16 +43,20 @@ namespace Cerberus
             services.AddScoped<IRoleManager, RoleManager>();
             services.AddScoped<IUserManager, UserManager>();
             services.AddScoped<IUserRoleManager, UserRoleManager>();
+            services.AddScoped<IFileManager, FileManager>();
 
             //Services:
             services.AddScoped<IMembershipService, MembershipService>();
             services.AddScoped<IEncryptionService, EncryptionService>();
+            services.AddScoped<IFileRepositoryService, FileRepositoryService>();
 
             services.AddAuthentication();
             services.AddAuthorization(options =>
             {
                 
             });
+
+            ApplicationInfoUtil.ApplicationPath = root_path;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

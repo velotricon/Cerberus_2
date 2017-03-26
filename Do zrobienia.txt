@@ -56,6 +56,9 @@
 	- Jakiś standard odpowiedzi? <<< zrobione (GenericResultContainer)
 	
 13) Jakiś util dostarczający informacji o zalogowanym użytkowniku (code behind).	
+
+14) Przenieść interfejsy serwisów do nowo utworzonego folderu "ServiceInterfaces"
+	<<< zrobione
 	
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

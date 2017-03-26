@@ -67,6 +67,15 @@ div.profile div.buttons {
         cursor: pointer;
     }
 
+div.profile div.profile-info div.avatar {
+
+}
+
+    div.profile div.profile-info div.avatar img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
 div.app-content {
     padding: 20px 8px 20px 8px;
     display: inline-block;

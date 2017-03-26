@@ -14,7 +14,7 @@ Czyli trzeba:
 4) Możliwość dodania avatara
 	- upload plików na serwer: JAK TO SIĘ ROBI?
 	- avatar zapisywaniy w jakimś konkretnym folderze
-	- określić jakoś rozmiar avatara
+	- określić jakoś rozmiar avatara (maksymalna szerokość i wysokość i maksymalny rozmiar pliku np 100Kb)
 	
 5) Wyświetlanie avatara
 	- <img src="...
