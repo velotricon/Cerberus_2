@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
 
     private logged_in: boolean = false;
     private username: string;
+    private avatar_path: string;
 
     private model_success(RequestResutlt: GenericResultContainer) {
         this.username = RequestResutlt.Result.Username;

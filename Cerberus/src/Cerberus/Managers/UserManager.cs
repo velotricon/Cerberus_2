@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Cerberus.Interfaces.ManagerInterfaces;
 using Cerberus.Models;
 using Cerberus.AbstractClasses;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cerberus.Managers
 {
@@ -32,6 +33,12 @@ namespace Cerberus.Managers
                 return user;
             else
                 throw new Exception("User with given name does not exist.");
+        }
+
+        public USER GetComplete(int Id)
+        {
+            USER result = this.context.USERS.Where(x => x.ID == Id && x.IS_ACTIVE == true).Include(x => x.AVATAR).First();
+            return result;
         }
     }
 }

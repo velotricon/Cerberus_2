@@ -45,9 +45,11 @@ namespace Cerberus.Controllers
             try
             {
                 UserUtil user_util = new UserUtil(this.HttpContext);
+                USER current_user = this.user_manager.GetComplete(user_util.GetCurrentUserId());
                 ProfileViewModel profile_info = new ProfileViewModel()
                 {
-                    Username = user_util.GetCurrentUserName()
+                    Username = current_user.LOGIN,
+                    AvatarPath = current_user.AVATAR.PATH
                 };
 
                 profile_result = new GenericResultContainer()

@@ -12,9 +12,12 @@ Czyli trzeba:
 	- Co tu jeszcze dodać?
 	
 4) Możliwość dodania avatara
-	- upload plików na serwer: JAK TO SIĘ ROBI?
-	- avatar zapisywaniy w jakimś konkretnym folderze
+	- upload plików na serwer: JAK TO SIĘ ROBI? <<< zrobione
+	- avatar zapisywaniy w jakimś konkretnym folderze <<< zrobione
 	- określić jakoś rozmiar avatara (maksymalna szerokość i wysokość i maksymalny rozmiar pliku np 100Kb)
+	- avatar ma się pokazywać obok nazwy użytkownika
+	- możliwość podejrzenia avatara w ustawieniach profilu
+	- możliwość usunięcia avatara
 	
 5) Wyświetlanie avatara
 	- <img src="...

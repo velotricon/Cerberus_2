@@ -8,5 +8,6 @@ namespace Cerberus.Models
     public class ProfileViewModel
     {
         public string Username { get; set; }
+        public string AvatarPath { get; set; }
     }
 }

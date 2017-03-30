@@ -10,5 +10,6 @@ namespace Cerberus.Interfaces.ManagerInterfaces
     {
         bool UserExists(string UserName);
         USER GetByName(string UserName);
+        USER GetComplete(int Id);
     }
 }
