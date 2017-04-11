@@ -9,5 +9,6 @@ namespace Cerberus.Interfaces.ServiceInterfaces
     public interface IFileRepositoryService
     {
         void AddUserAvatar(IFormFile File, int UserId);
+        void RemoveUserAvatar(int UserId);
     }
 }

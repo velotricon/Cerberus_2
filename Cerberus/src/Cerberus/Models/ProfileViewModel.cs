@@ -9,5 +9,6 @@ namespace Cerberus.Models
     {
         public string Username { get; set; }
         public string AvatarPath { get; set; }
+        public string Email { get; set; }
     }
 }

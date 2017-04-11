@@ -10,12 +10,19 @@ export class PersonAddComponent {
 
     Model = {};
     ErrorMessage: string;
+    public PersonNameTest: string = "test person name222";
 
     AddNewPerson() {
         this.service.AddPerson(this.Model).subscribe(
             result => this.RedirectToPersonView(result),
             error => this.ErrorMessage = error
         );
+    }
+
+    private test_val: string = "dupa";
+    TextBoxTest() {
+        alert(this.test_val);
+        
     }
 
     RedirectToPersonView(PersonId: number) {

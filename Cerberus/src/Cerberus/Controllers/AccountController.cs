@@ -49,12 +49,13 @@ namespace Cerberus.Controllers
                 ProfileViewModel profile_info = new ProfileViewModel()
                 {
                     Username = current_user.LOGIN,
-                    AvatarPath = current_user.AVATAR.PATH
+                    AvatarPath = current_user.AVATAR == null ? null : current_user.AVATAR.PATH,
+                    Email = current_user.EMAIL
                 };
 
                 profile_result = new GenericResultContainer()
                 {
-                    Succeeded = false,
+                    Succeeded = true,
                     Message = null,
                     Result = profile_info
                 };
@@ -182,10 +183,41 @@ namespace Cerberus.Controllers
         {
             GenericResultContainer result_container = new GenericResultContainer();
 
-            IFormFile file = Request.Form.Files.First();
-            UserUtil user_util = new UserUtil(this.HttpContext);
-            int user_id = user_util.GetCurrentUserId();
-            this.file_repository_service.AddUserAvatar(file, user_id);
+            try
+            {
+                IFormFile file = Request.Form.Files.First();
+                UserUtil user_util = new UserUtil(this.HttpContext);
+                int user_id = user_util.GetCurrentUserId();
+                this.file_repository_service.AddUserAvatar(file, user_id);
+
+                result_container.Succeeded = true;
+            }
+            catch(Exception ex)
+            {
+                result_container.Message = ex.Message;
+                result_container.Succeeded = false;
+            }
+
+            return new ObjectResult(result_container);
+        }
+
+        [Route("avatar/delete")]
+        [HttpPost]
+        public IActionResult DeleteCurrentUserAvatar()
+        {
+            GenericResultContainer result_container = new GenericResultContainer();
+
+            try
+            {
+                UserUtil user_util = new UserUtil(this.HttpContext);
+                this.file_repository_service.RemoveUserAvatar(user_util.GetCurrentUserId());
+                result_container.Succeeded = true;
+            }
+            catch(Exception ex)
+            {
+                result_container.Message = ex.Message;
+                result_container.Succeeded = false;
+            }
 
             return new ObjectResult(result_container);
         }

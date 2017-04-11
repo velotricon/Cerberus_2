@@ -1,4 +1,4 @@
-﻿import { Component }                    from '@angular/core'
+﻿import { Component }                    from '@angular/core';
 import { Router }                       from '@angular/router';
 import { IdentityService }              from '../services/identity.service'
 import { RootCommunicationService }     from '../services/root.communication.service';
@@ -20,7 +20,7 @@ export class LoginComponent {
     UserPassword: string;
 
     private on_login_success(Result: GenericResultContainer): void {
-        if (Result.Succeded) {
+        if (Result.Succeeded) {
             this.notification_service.ShowNotification("Logowanie", "Logowanie zakończyło się sukcesem");
             this.root_communication_service.AnnounceStringMessage('refresh profile');
             this.router.navigateByUrl('/home');

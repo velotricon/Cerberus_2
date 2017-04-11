@@ -9,7 +9,13 @@
             <input [(ngModel)]="Model.SURNAME" placeholder="SURNAME"/>
         </div>
         <div class="row">
+            <label>Test person name:</label>
+            <!--<text-box-ctrl #person_name_test [value]="PersonNameTest" (input)="PersonNameTest = person_name_test.value;" [(val)]="test_val"></text-box-ctrl>-->
+            <text-box-ctrl [(value)]="test_val"></text-box-ctrl>
+        </div>
+        <div class="row">
             <button (click)="AddNewPerson()">Add new person</button>
+            <button (click)="TextBoxTest()">Text-Box Test</button>
         </div>
         <div class="row">
             <back-button></back-button>

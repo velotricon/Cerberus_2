@@ -27,6 +27,7 @@ Rodzaje komunikatów:
 	- Ró¿ne typy [Success / Info / Error]
 	- Pokazywany gdzieœ w rogu ekranu, przemieszcza siê wraz ze scrollowaniem.
 	- Ograniczona iloœæ znaków.
+	- Kó³eczko (gif)
 
 ---------------------------------------------------------------------------------------------------------	
 Obs³uga b³êdów: Pokazywanie odpowiednich b³êdów u¿ytkownikowi, czyli trzeba dorobiæ w ogóle obs³ugê tych b³êdów.

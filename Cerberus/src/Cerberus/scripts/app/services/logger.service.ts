@@ -7,11 +7,11 @@ export class LoggerService {
         this.LogList = new Array < LogContainer >();
     }
 
-    AllowLog: boolean = true;
-    AllowInfo: boolean = true;
-    AllowDebug: boolean = true;
-    AllowError: boolean = true; 
-    LogList: LogContainer[];
+    private AllowLog: boolean = true;
+    private AllowInfo: boolean = true;
+    private AllowDebug: boolean = true;
+    private AllowError: boolean = true; 
+    private LogList: LogContainer[];
     
     Log(Message: string): void
     Log(Message: string, Sender: string): void
@@ -51,7 +51,7 @@ export class LoggerService {
     }
 
     private prepare_console_message(Message: string, Sender: string, ComponentName: string): string {
-        let result: string = "";
+        let result: string = (new Date()).toISOString() + ' ';
         if (ComponentName != null) {
             result += ComponentName + ' >> ';
         } else {

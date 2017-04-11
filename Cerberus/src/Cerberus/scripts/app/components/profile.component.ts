@@ -2,15 +2,19 @@
 import { Router }                                       from '@angular/router';
 import { IdentityService }                              from '../services/identity.service';
 import { NotificationService }                          from '../services/notification.service';
+import { LoggerService }                                from '../services/logger.service';
 import { StatusContainer }                              from '../containers/status.container';
 import { GenericResultContainer }                       from '../containers/generic.result.container';
+
 
 @Component({
     selector: 'profile',
     templateUrl: './templates/profile.html'
 })
 export class ProfileComponent implements OnInit {
-    constructor(private service: IdentityService, private router: Router) {
+    constructor(private service: IdentityService, private router: Router,
+        private logger: LoggerService) {
+        this.logger.Debug('log', 'constructor', 'ProfileComponent');
     }
 
     @Output() StatusPublisher = new EventEmitter<StatusContainer>();
@@ -20,12 +24,19 @@ export class ProfileComponent implements OnInit {
     private avatar_path: string;
 
     private model_success(RequestResutlt: GenericResultContainer) {
-        this.username = RequestResutlt.Result.Username;
-        this.logged_in = true;
+        this.logger.Log('RequestResutlt.Succeeded = ' + RequestResutlt.Succeeded, 'model_success', 'ProfileComponent');
+        if (RequestResutlt.Succeeded) {
+            this.username = RequestResutlt.Result.Username;
+            this.avatar_path = RequestResutlt.Result.AvatarPath;
+            this.logger.Log('this.avatar_path = ' + this.avatar_path, 'model_success', 'ProfileComponent');
+            this.logged_in = true;
+        } else {
+            this.logged_in = false;
+        }
     }
 
     private model_error(Error: any) {
-        //alert('2');
+        this.logger.Log('log', 'model_error', 'ProfileComponent');
         this.logged_in = false;
     }
 
@@ -61,6 +72,7 @@ export class ProfileComponent implements OnInit {
     }
 
     public RefreshProfileInfo(): void {
+        this.logger.Log('log', 'RefreshProfileInfo', 'ProfileComponent');
         this.service.GetUserInfo().subscribe(
             result => this.model_success(result),
             error => this.model_error(error)
@@ -68,6 +80,7 @@ export class ProfileComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.logger.Debug('before RefreshProfileInfo', 'ngOnInit', 'ProfileComponent');
         this.RefreshProfileInfo();
 
         //let status = new StatusContainer();

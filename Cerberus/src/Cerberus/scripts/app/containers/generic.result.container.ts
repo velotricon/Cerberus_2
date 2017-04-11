@@ -1,6 +1,6 @@
 ﻿export class GenericResultContainer {
     constructor(
-        public Succeded: boolean,
+        public Succeeded: boolean,
         public Message: string,
         public Result: any
     ) { };

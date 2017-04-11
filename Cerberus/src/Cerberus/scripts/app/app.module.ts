@@ -1,9 +1,11 @@
 ﻿import { NgModule }                 from '@angular/core';
+import { ModuleWithProviders }      from '@angular/core';
 import { BrowserModule }            from '@angular/platform-browser';
 import { FormsModule }              from '@angular/forms';
-import { ModuleWithProviders }      from '@angular/core';
 import { Routes, RouterModule }     from '@angular/router';
 import { HttpModule, JsonpModule }  from '@angular/http';
+import { HashLocationStrategy }     from '@angular/common';
+import { LocationStrategy }         from '@angular/common';
 
 import { Routing }                  from './app.routing';
 
@@ -25,6 +27,8 @@ import { ProfileSettingsComponent } from './components/profile.settings.componen
 import { NotificationComponent }    from './components/notification.component';
 import { ConfirmPopupComponent }    from './components/confirm.popup.component';
 import { ButtonCtrlComponent }      from './components/button.ctrl.component';
+//Controls:
+import { TextBoxCtrlComponent }     from './components/controls/text.box.ctrl.component';
 
 //Services:
 import { MenuService }              from './services/menu.service';
@@ -43,6 +47,7 @@ import { RootCommunicationService } from './services/root.communication.service'
         Routing
     ],
     declarations: [
+        //Components:
         AppComponent,
         HomeComponent,
         MenuComponent,
@@ -57,10 +62,14 @@ import { RootCommunicationService } from './services/root.communication.service'
         NotificationComponent,
         ConfirmPopupComponent,
         ButtonCtrlComponent,
-        ProfileSettingsComponent
+        ProfileSettingsComponent,
+
+        //Controls:
+        TextBoxCtrlComponent
     ],
     bootstrap: [AppComponent],
     providers: [
+        //Services:
         MenuService,
         PersonService,
         LoggerService,

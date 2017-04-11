@@ -41,7 +41,7 @@ namespace Cerberus.Models
 
         public void RollbackTransaction()
         {
-            this.transaction.Rollback();
+            if (this.transaction != null) this.transaction.Rollback();
         }
 
         public void ClearContextUsersList()

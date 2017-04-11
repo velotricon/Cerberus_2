@@ -30,7 +30,8 @@ namespace Cerberus.Services
             string[] content_types = new string[]
             {
                 "image/jpeg",
-                "image/jpg"
+                "image/jpg",
+                "image/png"
             };
             if (!content_types.Contains(File.ContentType)) throw new Exception("Unsupported file type.");
             
@@ -41,7 +42,6 @@ namespace Cerberus.Services
             {
                 File.CopyTo(file_stream);
             }
-
 
             TransactionContext transaction_context = new TransactionContext();
             try
@@ -58,6 +58,39 @@ namespace Cerberus.Services
                 USER user = this.user_manager.Get(UserId);
                 user.AVATAR = new_file;
                 transaction_context.CommtTransaction();
+            }
+            catch(Exception ex)
+            {
+                transaction_context.RollbackTransaction();
+                throw ex;
+            }
+        }
+
+        public void RemoveUserAvatar(int UserId)
+        {
+            TransactionContext transaction_context = new TransactionContext();
+
+            try
+            {
+
+                transaction_context.AddContextUser(this.user_manager);
+                transaction_context.AddContextUser(this.file_manager);
+                transaction_context.BeginTransaction();
+
+                USER user = this.user_manager.GetComplete(UserId);
+                if (user.AVATAR == null)
+                {
+                    throw new Exception("Current user don't have an avatar!");
+                }
+                else
+                {
+
+                    this.file_manager.Delete(user.AVATAR.ID);
+                    user.AVATAR_ID = null;
+                    this.file_manager.Commit();
+                    System.IO.File.Delete(user.AVATAR.PATH);
+                    transaction_context.CommtTransaction();
+                }
             }
             catch(Exception ex)
             {

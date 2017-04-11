@@ -21,4 +21,4 @@ const AppRoutes: Routes = [
     { path: 'profile/settings', component: ProfileSettingsComponent }
 ];
 
-export const Routing: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
+export const Routing: ModuleWithProviders = RouterModule.forRoot(AppRoutes, { useHash: true });

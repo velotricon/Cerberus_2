@@ -18,6 +18,9 @@ Czyli trzeba:
 	- avatar ma się pokazywać obok nazwy użytkownika
 	- możliwość podejrzenia avatara w ustawieniach profilu
 	- możliwość usunięcia avatara
+	- możliwość modyfikacji avatara
+	- dodać do obsługiwanych typów różne typy plików (gif itp itd)
+	
 	
 5) Wyświetlanie avatara
 	- <img src="...

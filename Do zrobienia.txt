@@ -54,6 +54,7 @@
 	- Jakiś parser do odpowiedzi? <<< zrobione (AbstractApiService)
 	- Uniwersalny obiekt do odpowiedzi? <<< zrobione (GenericResultContainer)
 	- Jakiś standard odpowiedzi? <<< zrobione (GenericResultContainer)
+	- Być może AbstracComponent, który aktualnie nie jest używany mógłby zostać wykorzystany do przetwarzania odpowiedzi z serwera? Trzeba by dodać do niego dwie metody "on_request_success" i "on_request_error".
 	
 13) Jakiś util dostarczający informacji o zalogowanym użytkowniku (code behind).	
 
@@ -61,6 +62,18 @@
 	<<< zrobione
 	
 15) Możliwe, że ApplicationInfoUtil się nie przyda	
+
+16) Multi-Router-Outlet, czyli zagnieżdżone umieszczenie elementu <router-outlet> lub kilka elementów <router-outlet> na jednej stronie. 
+Trzeba wymyślić jakąś funkcjonalność, która wymagałaby użycia kilku elementów router-outlet na raz.
+	- Można do listy dołożyć możliwość szybkiego dodania obiektu (np. dla listy osób możliwość szybkiego dodania osoby)
+	- Tab'y. Czyli organizacja strony oparta o zakładki. Co mogłoby być zorganizowane w oparciu o zakładki?
+		a) Ustawienia systemu?
+		b) Coś, co wymaga w jednym miejscu dużo kontrolek ale można to podzielić na sekcje
+
+17) Możliwość odświerzenia strony.
+	<<< zrobione przy pomocy hasha w linku
+	
+18) Walidacja inputów	
 	
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,12 +1,31 @@
 ﻿<div class="profile-settings">
-    <!--<div style="width: 400px; height: 200px;" 
-        ng2FileDrop
-        [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
-        (fileOver)="fileOverBase($event)"
-        [uploader]="uploader"
-        class="well my-drop-zone">
-        Base drop zone
-    </div>-->
-    <input type="file" ng2FileSelect [uploader]="uploader" />
-    <button (click)="upload_file()">Wyślij</button>
+    <div class="row">
+        <label>Username:</label>
+        <span>{{username}}</span>
+    </div>
+    <div class="row">
+        <label>email:</label>
+        <span>{{email}}</span>
+    </div>
+    <div class="row" *ngIf="avatar_path">
+        <label>avatar:</label>
+        <div class="avatar-img">
+            <img src="..{{avatar_path}}" />
+        </div>
+        <div class="buttons">
+            <button (click)="remove_avatar_click()">Remove avatar</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="!avatar_path">
+        <div class="row">
+            <label>
+                Add avatar:
+            </label>
+            <input type="file" ng2FileSelect [uploader]="uploader" />
+            <div class="buttons">
+                <button (click)="upload_file()">Send</button>
+            </div>
+        </div>
+    </div>
+    
 </div>
