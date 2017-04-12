@@ -1,0 +1,6 @@
+﻿<select *ngIf="model" [(ngModel)]="model.SelectedValue">
+    <option *ngFor="let item of model.Items" value="{{item.Value}}">{{item.Text}}</option>
+</select>
+<select *ngIf="!model">
+    <option>NULL</option>
+</select>

@@ -1,12 +1,17 @@
-﻿import { Component }        from '@angular/core';
-import { PersonService }    from '../services/person.service';
+﻿import { Component }                        from '@angular/core';
+import { PersonService }                    from '../services/person.service';
+import { LoggerService }                    from '../services/logger.service';
+import { LightComboBoxModelContainer }      from '../containers/light.combo.box.model.container';
+import { LightComboBoxItemContainer }       from '../containers/light.combo.box.item.container';
+import { COMBO_MODEL }                      from '../mockups/light.combo.box.mock';
+
 
 @Component({
     selector: 'person-add',
     templateUrl: './templates/person.add.html'
 })
 export class PersonAddComponent {
-    constructor(private service: PersonService) { }
+    constructor(private service: PersonService, private logger: LoggerService) { }
 
     Model = {};
     ErrorMessage: string;
@@ -19,11 +24,12 @@ export class PersonAddComponent {
         );
     }
 
-    private test_val: string = "dupa";
+    //Test:
+    private combo_model: LightComboBoxModelContainer = COMBO_MODEL;
     TextBoxTest() {
-        alert(this.test_val);
-        
+        alert('SelectedValue: ' + this.combo_model.SelectedValue);
     }
+    //end-of-Test
 
     RedirectToPersonView(PersonId: number) {
 

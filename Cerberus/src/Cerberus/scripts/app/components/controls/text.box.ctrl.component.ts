@@ -18,8 +18,7 @@ export class TextBoxCtrlComponent {
         this._value = Value;
     }
 
-    on_value_change(): void {
-        this.logger.Debug('emit', 'on_value_change', 'TextBoxCtrlComponent');
+    private on_value_change(): void {
         this.valueChange.emit(this._value);
     }
 }

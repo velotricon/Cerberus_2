@@ -2,6 +2,7 @@
 import { ModuleWithProviders }      from '@angular/core';
 import { BrowserModule }            from '@angular/platform-browser';
 import { FormsModule }              from '@angular/forms';
+import { ReactiveFormsModule }      from '@angular/forms';
 import { Routes, RouterModule }     from '@angular/router';
 import { HttpModule, JsonpModule }  from '@angular/http';
 import { HashLocationStrategy }     from '@angular/common';
@@ -28,7 +29,8 @@ import { NotificationComponent }    from './components/notification.component';
 import { ConfirmPopupComponent }    from './components/confirm.popup.component';
 import { ButtonCtrlComponent }      from './components/button.ctrl.component';
 //Controls:
-import { TextBoxCtrlComponent }     from './components/controls/text.box.ctrl.component';
+import { TextBoxCtrlComponent }         from './components/controls/text.box.ctrl.component';
+import { LightComboBoxCtrlComponent }   from './components/controls/light.combo.box.ctrl.component';
 
 //Services:
 import { MenuService }              from './services/menu.service';
@@ -42,6 +44,7 @@ import { RootCommunicationService } from './services/root.communication.service'
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         FileUploadModule,
         Routing
@@ -63,9 +66,9 @@ import { RootCommunicationService } from './services/root.communication.service'
         ConfirmPopupComponent,
         ButtonCtrlComponent,
         ProfileSettingsComponent,
-
         //Controls:
-        TextBoxCtrlComponent
+        TextBoxCtrlComponent,
+        LightComboBoxCtrlComponent
     ],
     bootstrap: [AppComponent],
     providers: [

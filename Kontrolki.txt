@@ -1,3 +1,28 @@
 1) Text-Box
 	- Two-way data binding
 	- OnChange
+	
+2) Combo-Box
+	- combos zbudowany na zwykłej html-owej tabelce
+	- api-provider do danych dla combosa
+	- ograniczona ilość danych w jednym requeście
+	- dociąganie danych osobnymi requestami
+	- aktywne zawężanie po wpisaniu jakiegoś ciągu znaków
+	- uniwersalny obiekt (kontener) do przechowywania danych dla combosa 
+	- two-way-data-binding
+	- eventy:
+		> na pewno OnChange
+	
+3) Light-Combo-Box
+	
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+Walidacja  ---------------------------------------------------------------------------------------------------------
+
+Kontrolka powinna sprawdzać poprawność wprowadzanych danych, więc powinna wiedzieć jak sprawdzić tą poprawność i co pokazać jeśli dane nie są poprawne.
+1) Jak sprawdzić poprawność
+	- Uniwersalny obiet, przechowujący informacje o walidacji danego input'a?
+	
+2) Co pokazać jeśli dane nie są poprawne
+	- Uniwersalny obiekt z tłumaczeniami do walidatorów?
