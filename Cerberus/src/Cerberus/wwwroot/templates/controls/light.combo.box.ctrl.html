@@ -1,6 +1,7 @@
-﻿<select *ngIf="model" [(ngModel)]="model.SelectedValue">
-    <option *ngFor="let item of model.Items" value="{{item.Value}}">{{item.Text}}</option>
+﻿<select *ngIf="Model" [(ngModel)]="Model.SelectedValue" (change)="on_model_changed()">
+    <option *ngIf="AddEmptyRow" selected></option>
+    <option *ngFor="let item of Model.Items" value="{{item.Value}}">{{item.Text}}</option>
 </select>
-<select *ngIf="!model">
+<select *ngIf="!Model">
     <option>NULL</option>
 </select>

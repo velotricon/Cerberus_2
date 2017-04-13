@@ -12,6 +12,7 @@
 	- two-way-data-binding
 	- eventy:
 		> na pewno OnChange
+	- autoryzacja zapytań o dane
 	
 3) Light-Combo-Box
 	

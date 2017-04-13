@@ -7,17 +7,19 @@ import { LightComboBoxItemContainer }               from '../../containers/light
     templateUrl: './templates/controls/light.combo.box.ctrl.html'
 })
 export class LightComboBoxCtrlComponent {
-    private _model: LightComboBoxModelContainer;
-    @Output() modelChange: EventEmitter<LightComboBoxModelContainer> = new EventEmitter<LightComboBoxModelContainer>();
-    @Input('model') model: LightComboBoxModelContainer;
-    get(): LightComboBoxModelContainer {
-        return this._model;
-    }
-    set(Model: LightComboBoxModelContainer): void {
-        this._model = Model;
-    }
+    //private _model: LightComboBoxModelContainer;
+    //@Output() ModelChange: EventEmitter<LightComboBoxModelContainer> = new EventEmitter<LightComboBoxModelContainer>();
+    @Input('Model') Model: LightComboBoxModelContainer;
+    //get(): LightComboBoxModelContainer {
+    //    return this._model;
+    //}
+    //set(Model: LightComboBoxModelContainer): void {
+    //    this._model = Model;
+    //}
+
+    @Input('AddEmptyRow') AddEmptyRow: boolean = false;
 
     private on_model_changed(): void {
-        this.modelChange.emit(this._model);
+        //this.ModelChange.emit(this.Model);
     }
 }

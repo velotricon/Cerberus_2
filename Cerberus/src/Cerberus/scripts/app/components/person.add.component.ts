@@ -3,7 +3,7 @@ import { PersonService }                    from '../services/person.service';
 import { LoggerService }                    from '../services/logger.service';
 import { LightComboBoxModelContainer }      from '../containers/light.combo.box.model.container';
 import { LightComboBoxItemContainer }       from '../containers/light.combo.box.item.container';
-import { COMBO_MODEL }                      from '../mockups/light.combo.box.mock';
+import { LIGHT_COMBO_MODEL }                from '../mockups/light.combo.box.mock';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class PersonAddComponent {
     }
 
     //Test:
-    private combo_model: LightComboBoxModelContainer = COMBO_MODEL;
+    private combo_model: LightComboBoxModelContainer = LIGHT_COMBO_MODEL;
     TextBoxTest() {
         alert('SelectedValue: ' + this.combo_model.SelectedValue);
     }

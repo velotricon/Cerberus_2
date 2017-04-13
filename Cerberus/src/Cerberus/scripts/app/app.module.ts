@@ -31,6 +31,7 @@ import { ButtonCtrlComponent }      from './components/button.ctrl.component';
 //Controls:
 import { TextBoxCtrlComponent }         from './components/controls/text.box.ctrl.component';
 import { LightComboBoxCtrlComponent }   from './components/controls/light.combo.box.ctrl.component';
+import { ComboBoxCtrlComponent }        from './components/controls/combo.box.ctrl.component';
 
 //Services:
 import { MenuService }              from './services/menu.service';
@@ -66,6 +67,7 @@ import { RootCommunicationService } from './services/root.communication.service'
         ConfirmPopupComponent,
         ButtonCtrlComponent,
         ProfileSettingsComponent,
+        ComboBoxCtrlComponent,
         //Controls:
         TextBoxCtrlComponent,
         LightComboBoxCtrlComponent
