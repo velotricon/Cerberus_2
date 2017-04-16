@@ -4,7 +4,9 @@ import { LoggerService }                    from '../services/logger.service';
 import { LightComboBoxModelContainer }      from '../containers/light.combo.box.model.container';
 import { LightComboBoxItemContainer }       from '../containers/light.combo.box.item.container';
 import { LIGHT_COMBO_MODEL }                from '../mockups/light.combo.box.mock';
-
+import { ComboBoxModelContainer }           from '../containers/combo.box.model.container';
+import { ComboBoxItemContainer }            from '../containers/combo.box.item.container';
+import { COMBO_BOX_MOCK }                   from '../mockups/combo.box.mock';
 
 @Component({
     selector: 'person-add',
@@ -26,8 +28,12 @@ export class PersonAddComponent {
 
     //Test:
     private combo_model: LightComboBoxModelContainer = LIGHT_COMBO_MODEL;
-    TextBoxTest() {
+    private TextBoxTest() {
         alert('SelectedValue: ' + this.combo_model.SelectedValue);
+    }
+    private combo_box_model: ComboBoxModelContainer = COMBO_BOX_MOCK;
+    private TestComboBoxSelectedVal() {
+        alert('ComboBox SelectedValue: ' + this.combo_box_model.SelectedItemId);
     }
     //end-of-Test
 

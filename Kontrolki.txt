@@ -9,6 +9,9 @@
 	- dociąganie danych osobnymi requestami
 	- aktywne zawężanie po wpisaniu jakiegoś ciągu znaków
 	- uniwersalny obiekt (kontener) do przechowywania danych dla combosa 
+		> SelectedItemId: string
+		> Itemki: kolumna, nazwa kolumny (razem z translacją?)
+			
 	- two-way-data-binding
 	- eventy:
 		> na pewno OnChange

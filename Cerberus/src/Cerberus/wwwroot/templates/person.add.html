@@ -9,12 +9,17 @@
             <input [(ngModel)]="Model.SURNAME" placeholder="SURNAME"/>
         </div>
         <div class="row">
-            <label>Combo test:</label>
+            <label>LightCombo test:</label>
             <light-combo-box-ctrl [(Model)]="combo_model" [AddEmptyRow]="true"></light-combo-box-ctrl>
+        </div>
+        <div class="row">
+            <label>ComboBox test</label>
+            <combo-box-ctrl [(Model)]="combo_box_model"></combo-box-ctrl>
         </div>
         <div class="row">
             <button (click)="AddNewPerson()">Add new person</button>
             <button (click)="TextBoxTest()">Text-Box Test</button>
+            <button (clikc)="TestComboBoxSelectedVal()">ComboBox test</button>
         </div>
         <div class="row">
             <back-button></back-button>

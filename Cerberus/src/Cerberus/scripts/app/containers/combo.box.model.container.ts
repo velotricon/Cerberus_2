@@ -2,8 +2,8 @@
 
 export class ComboBoxModelContainer {
     constructor(
-        public SelectedItemId: string,
-        public Items: ComboBoxItemContainer[]
+        public Items: ComboBoxItemContainer[],
+        public SelectedItemId: string
     ) {
 
         //Columns length check:

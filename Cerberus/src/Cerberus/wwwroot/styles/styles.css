@@ -153,3 +153,21 @@ div.row {
     div.row div.buttons {
         margin-left: 144px;
     }
+
+div.combo-box-ctrl div.drop-down-btn {
+    display: inline;
+    cursor: pointer;
+}
+
+div.combo-table tr {
+    cursor: pointer;
+}
+
+    div.combo-table tr td {
+        border-bottom: 1px solid silver;
+    }
+
+    div.combo-table tr:hover td {
+        background-color: lightgrey;
+        border-bottom: 1px solid var(--crb-gold)
+    }
