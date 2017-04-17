@@ -6,6 +6,9 @@
     // map tells the System loader where to look for things
     var map = {
         'app': 'appScripts', // 'dist',
+        '@angular/animations': 'libs/@angular/animations/bundles/animations.umd.js',
+        '@angular/animations/browser': 'libs/@angular/animations/bundles/animations-browser.umd.js',
+        '@angular/platform-browser/animations': 'libs/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
         '@angular': 'libs/@angular',
         'angular2-in-memory-web-api': 'libs/angular2-in-memory-web-api',
         'rxjs': 'libs/rxjs',

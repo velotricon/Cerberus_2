@@ -30,3 +30,16 @@ Kontrolka powinna sprawdzać poprawność wprowadzanych danych, więc powinna wi
 	
 2) Co pokazać jeśli dane nie są poprawne
 	- Uniwersalny obiekt z tłumaczeniami do walidatorów?
+	
+	
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+Serwis do zwracania danych dla combosa  ----------------------------------------------------------------------------
+
+0) Będzie to api w postaci pojedynczego kontrolera. Dla każdego combosa może być inna metoda, dzięki temu można rozwiązać problem dostępu do danych.
+1) Powinien pobierać kod combosa - jeśli dla każdego combosa będzie osobna metoda to nie będzie trzeba posługiwać się kodami. Swoistym kodem będzie adres url do zapytania o dane. 
+	Kontrolka od strony skryptów może nawet pobierać kod combosa, żeby wiedzieć do jakiej metody wyłać zapytanie do kontrolera.
+2) Powienien sprawdzać, czy dany użytkownik ma dostęp do tych danych
+3) Powinien korzystać z uniwersalnego komponentu do przesyłu danych do combosa (taki jak po stronie angulara)
+
+	

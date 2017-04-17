@@ -1,6 +1,7 @@
 ﻿import { NgModule }                 from '@angular/core';
 import { ModuleWithProviders }      from '@angular/core';
 import { BrowserModule }            from '@angular/platform-browser';
+import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { FormsModule }              from '@angular/forms';
 import { ReactiveFormsModule }      from '@angular/forms';
 import { Routes, RouterModule }     from '@angular/router';
@@ -43,6 +44,7 @@ import { RootCommunicationService } from './services/root.communication.service'
 
 @NgModule({
     imports: [
+        BrowserAnimationsModule,
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
