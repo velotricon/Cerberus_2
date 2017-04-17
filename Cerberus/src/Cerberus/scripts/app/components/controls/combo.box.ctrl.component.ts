@@ -7,13 +7,13 @@ import { ComboBoxItemContainer }                        from '../../containers/c
 
 let OpenCloseComboAnimation = trigger('OpenCloseCombo', [
     state('Open', style({
-        'display': 'block'
+        display: 'block'
     })),
     state('Close', style({
-        'display': 'none'
+        display: 'none'
     })),
-    transition('Open => Close', animate('100ms ease out')),
-    transition('Close => Open', animate('100ms ease in'))
+    transition('Open => Close', animate('500ms ease-up')),
+    transition('Close => Open', animate('500ms ease-down'))
 ]);
 
 @Component({
@@ -26,10 +26,14 @@ export class ComboBoxCtrlComponent {
 
     @Input('Model') Model: ComboBoxModelContainer;
 
-    private is_open: boolean = false;
+    private is_open: string = 'Close';
 
     private open_close_combo() {
-        this.is_open = !this.is_open;
+        if (this.is_open == 'Close') {
+            this.is_open = 'Open';
+        } else {
+            this.is_open = 'Close';
+        }
     }
 
     private item_selected(ItemId: string): void {

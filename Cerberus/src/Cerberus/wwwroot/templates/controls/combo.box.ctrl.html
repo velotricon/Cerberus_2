@@ -3,8 +3,8 @@
         <input type="text" />
         <div class="drop-down-btn" (click)="open_close_combo()">[&#8681;]</div>
     </div>
-    <div class="combo-table">
-        <table *ngIf="Model" [@OpenCloseCombo]="is_open">
+    <div class="combo-table" *ngIf="Model">
+        <table [@OpenCloseCombo]="is_open">
             <thead></thead>
             <tbody>
                 <tr *ngFor="let item of Model.Items" (click)="item_selected(item.Id)">
@@ -13,6 +13,6 @@
             </tbody>
             <tfoot></tfoot>
         </table>
-        <span *ngIf="!Model" class="null-model-info">NULL</span>
     </div>
+    <span *ngIf="!Model" class="null-model-info">NULL</span>
 </div>
