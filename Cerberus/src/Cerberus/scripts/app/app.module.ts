@@ -29,6 +29,7 @@ import { ProfileSettingsComponent } from './components/profile.settings.componen
 import { NotificationComponent }    from './components/notification.component';
 import { ConfirmPopupComponent }    from './components/confirm.popup.component';
 import { ButtonCtrlComponent }      from './components/button.ctrl.component';
+import { FormTestComponent }        from './components/form.test.component';
 //Controls:
 import { TextBoxCtrlComponent }         from './components/controls/text.box.ctrl.component';
 import { LightComboBoxCtrlComponent }   from './components/controls/light.combo.box.ctrl.component';
@@ -70,6 +71,7 @@ import { RootCommunicationService } from './services/root.communication.service'
         ButtonCtrlComponent,
         ProfileSettingsComponent,
         ComboBoxCtrlComponent,
+        FormTestComponent,
         //Controls:
         TextBoxCtrlComponent,
         LightComboBoxCtrlComponent

@@ -154,10 +154,19 @@ div.row {
         margin-left: 144px;
     }
 
-div.combo-box-ctrl div.drop-down-btn {
-    display: inline;
-    cursor: pointer;
+div.combo-box-ctrl {
+    display: inline-block;
 }
+
+    div.combo-box-ctrl div.drop-down-btn {
+        display: inline;
+        cursor: pointer;
+    }
+
+    div.combo-box-ctrl div.combo-table {
+        position: absolute;
+        background-color: whitesmoke;
+    }
 
 div.combo-table tr {
     cursor: pointer;
@@ -165,6 +174,8 @@ div.combo-table tr {
 
     div.combo-table tr td {
         border-bottom: 1px solid silver;
+        border-left: 1px solid silver;
+        border-right: 1px solid silver;
     }
 
     div.combo-table tr:hover td {

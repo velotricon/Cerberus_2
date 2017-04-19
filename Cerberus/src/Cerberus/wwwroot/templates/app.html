@@ -6,7 +6,7 @@
     <menu></menu>
     <div class="app-content">
         <router-outlet></router-outlet>
-        <div (click)="OnClick_TestBtn()" class="button">
+        <div (click)="OnClick_TestBtn()" class="button" style="display: none">
             test
         </div>
         <confirm-popup #popup (OkClick)="OnPopupOk()" (AbortClick)="OnPopupAbort()"></confirm-popup>

@@ -1,0 +1,19 @@
+﻿<div class="form-test">
+    <h1>Form test</h1>
+    <form #testForm="ngForm" (ngSubmit)="on_form_submit()">
+        <div class="row">
+            <label>First name:</label>
+            <input #hashfirst [(ngModel)]="model.firstname" name="first"/>
+        </div>
+        <div class="row">
+            <label>Last name:</label>
+            <input #hashlast [(ngModel)]="model.lastname" name="last"/>
+        </div>
+        <div class="row">
+            <div class="buttons">
+                <button (click)="on_submit(testForm)">submit</button>
+                <button type="submit">test submit</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -8,6 +8,7 @@ import { PersonAddComponent }       from './components/person.add.component';
 import { RegisterComponent }        from './components/register.component';
 import { LoginComponent }           from './components/login.component';
 import { ProfileSettingsComponent } from './components/profile.settings.component';
+import { FormTestComponent }        from './components/form.test.component';
 
 const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const AppRoutes: Routes = [
     { path: 'person/view/:id', component: PersonViewComponent },
     { path: 'persons', component: PersonListComponent },
     { path: 'person/add', component: PersonAddComponent },
-    { path: 'profile/settings', component: ProfileSettingsComponent }
+    { path: 'profile/settings', component: ProfileSettingsComponent },
+    { path: 'formtest', component: FormTestComponent }
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(AppRoutes, { useHash: true });
