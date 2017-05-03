@@ -30,7 +30,16 @@ Kontrolka powinna sprawdzać poprawność wprowadzanych danych, więc powinna wi
 	
 2) Co pokazać jeśli dane nie są poprawne
 	- Uniwersalny obiekt z tłumaczeniami do walidatorów?
+
+3) Na dobry początek można by spróbować proste wymagania:
+	- FieldRequired
+	- MinLength
+	- MaxLength
 	
+4) Przycisk nie może pozwolić na wysłanie formularza bez uzupełnionych danych. W tym celu musi w jakiś sposób komunikować się z kontrolkami.
+Czy przycisk może być kontrolką? (Czemu nie?)
+
+5) FormDirective może komunikować się ze wszystkimi kontrolkami przy wykorzystaniu jakiegos serwisu (ValidationService).
 	
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------

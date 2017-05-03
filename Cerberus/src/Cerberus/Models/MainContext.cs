@@ -38,6 +38,8 @@ namespace Cerberus.Models
         public DbSet<USER_ROLE> USER_ROLES { get; set; }
         public DbSet<PERMISSION> PERMISSIONS { get; set; }
         public DbSet<ROLE_PERMISSION> ROLE_PERMISSIONS { get; set; }
-        
+        public DbSet<LOCALIZATION> LOCALIZATIONS { get; set; }
+        public DbSet<TRANSLATION> TRANSLATIONS { get; set; }
+        public DbSet<SYSTEM_CODE> SYSTEM_CODES { get; set; } 
     }
 }

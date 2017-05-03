@@ -1,0 +1,19 @@
+1) Wraz z u¿ytkownikiem trzeba by trzymaæ gdzieœ jego lokalizacjê (pl-PL)
+2) Rekord translacji powinien te¿ zawieraæ krótki opis sk¹d dana translacja siê wziê³a. Bez tego osoba t³umacz¹ca mo¿e nie znaæ kontekstu, przez co trudniej jej bêdzie t³umaczyæ aplikacjê.
+3) Kod t³umaczenia powinien byæ d³ugi (bêdzie du¿o t³umaczeñ w aplikacji).
+4) Czy google t³umacz wystawia jakieœ API? Jeœli tak to mo¿na pokusiæ siê o zaimplementowanie zautomatyzowanego t³umaczenia na dany jêzyk... Ciekawa sprawa.
+
+5) Czy do translacji trzeba zrobiæ osobny serwis w api? Jeœli bêdzie du¿o logiki to tak. Tylko ile logiki bêdzie?
+	1) pobieranie pojedynczej translacji
+	2) pobieranie wszystkich translacji
+	3) dodawanie jednej translacji
+	4) dodawanie wielu translacji na raz
+	5) aktualizacja translacji
+	6) aktualizacja wielu translacji
+	[jeœli tej logiki tylko tyle bêdzie to nie potrzeba ¿adnego serwisu]
+	
+6) Do translacji (i pewnie nie tylko) s¹ te¿ kody systemowe [klasa SYSTEM_CODE]. Trzeba porobiæ api do obs³ugi tych kodów.
+
+7) Mo¿e by zrobiæ eksport/import translacji do pliku XML? Mo¿na by dziêki temu przenosiæ translacje miêdzy systemami. 
+	- Pewnie wspólna baza by³a by lepszym pomys³em.
+	- Pewnie gdybym siê nauczy³ jak nie traciæ danych z tabel podczas migracji to by³o by lepiej.

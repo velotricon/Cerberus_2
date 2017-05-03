@@ -26,7 +26,6 @@
 	
 7) Translacje
 	- Przydadzą się chociaży do menu
-	- Wraz z użytkownikiem trzeba by trzymać gdzieś jego lokalizację (pl-PL)
 		
 8) Czy da się zrobić tak, żeby komponent dziedziczący po AbstractComponent nie musiał przekazywać wszystkich serviców w konstruktorze?
 	- Być może da się zrobić tak, żeby możliwe było przekazywanie dowolnej ilości serwisów. Np. serwisy jako argumenty typu nullable. Albo zmienna ilość argumentów wywołania (albo coś innego).
@@ -76,6 +75,12 @@ Trzeba wymyślić jakąś funkcjonalność, która wymagałaby użycia kilku ele
 18) Walidacja inputów	
 
 19) Trzeba rozsądnie rozwiązać temat logów
+
+20) Podzielić folder "Models". Propozycje:
+	- Osobny folder na klasy ViewModel
+	- Osobny folder na klasy MODEL
+	- W samym folderze models zostawić klasy kontekstu (Context)
+	(więcej nie ma co dzielić)
 	
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
