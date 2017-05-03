@@ -1,13 +1,17 @@
 ﻿<div class="form-test">
     <h1>Form test</h1>
-    <form #testForm="ngForm" (ngSubmit)="on_form_submit()">
+    <form crb-form #testForm="ngForm" (ngSubmit)="on_form_submit(testForm)">
         <div class="row">
             <label>First name:</label>
-            <input #hashfirst [(ngModel)]="model.firstname" name="first"/>
+            <input #hashfirst [(ngModel)]="model.firstname" name="firstCtrl"/>
         </div>
         <div class="row">
             <label>Last name:</label>
-            <input #hashlast [(ngModel)]="model.lastname" name="last"/>
+            <input #hashlast [(ngModel)]="model.lastname" (change)="on_last_name_change(hashlast)" name="lastCtrl"/>
+        </div>
+        <div class="row">
+            <label>Text box:</label>
+            <text-box-ctrl [(value)]="model.text" #TextBox name="TextBox"></text-box-ctrl>
         </div>
         <div class="row">
             <div class="buttons">

@@ -1,1 +1,1 @@
-﻿<input type="text" [(ngModel)]="value" (change)="on_value_change()"/>
+﻿<input type="text" #TextBoxElement name="TextBoxElement" [(ngModel)]="value" (change)="on_value_change(TextBoxElement)"/>

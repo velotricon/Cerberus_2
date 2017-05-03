@@ -35,6 +35,9 @@ import { TextBoxCtrlComponent }         from './components/controls/text.box.ctr
 import { LightComboBoxCtrlComponent }   from './components/controls/light.combo.box.ctrl.component';
 import { ComboBoxCtrlComponent }        from './components/controls/combo.box.ctrl.component';
 
+//Directives:
+import { FormDirective }            from './directives/form.directive';
+
 //Services:
 import { MenuService }              from './services/menu.service';
 import { PersonService }            from './services/person.service';
@@ -42,6 +45,7 @@ import { LoggerService }            from './services/logger.service';
 import { IdentityService }          from './services/identity.service';
 import { NotificationService }      from './services/notification.service';
 import { RootCommunicationService } from './services/root.communication.service';
+import { ValidationService }        from './services/validation.service';
 
 @NgModule({
     imports: [
@@ -74,7 +78,9 @@ import { RootCommunicationService } from './services/root.communication.service'
         FormTestComponent,
         //Controls:
         TextBoxCtrlComponent,
-        LightComboBoxCtrlComponent
+        LightComboBoxCtrlComponent,
+        //Directives:
+        FormDirective
     ],
     bootstrap: [AppComponent],
     providers: [
@@ -84,7 +90,8 @@ import { RootCommunicationService } from './services/root.communication.service'
         LoggerService,
         IdentityService,
         NotificationService,
-        RootCommunicationService
+        RootCommunicationService,
+        ValidationService
     ]
 })
 export class AppModule { }
